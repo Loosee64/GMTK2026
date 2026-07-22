@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cka2ix7kuowjd"]
+
+[ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="1_pmsje"]
+[ext_resource type="Texture2D" uid="uid://bikaf2nda2rps" path="res://Assets/Untitled_Artwork.png" id="2_73reo"]
+
+[node name="Object" unique_id=1751848827 instance=ExtResource("1_pmsje")]
+
+[node name="TextureRect" type="TextureRect" parent="." index="1" unique_id=175595282]
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 59.0
+offset_bottom = 48.0
+texture = ExtResource("2_73reo")
+expand_mode = 1

@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://di7lv4icyqso4"]
 
 [ext_resource type="PackedScene" uid="uid://c556trw15vef" path="res://Scenes/spawner.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://cka2ix7kuowjd" path="res://Scenes/interactable.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cr0ndea6x3djc" path="res://Scenes/tool.tscn" id="3_jjvhh"]
 
 [node name="Node2D" type="Node2D" unique_id=669976395]
+
+[node name="Tool" parent="." unique_id=1751848827 instance=ExtResource("3_jjvhh")]
+visible = false
+type = 0
 
 [node name="Counter" type="ColorRect" parent="." unique_id=1862647301]
 offset_top = 424.0
@@ -19,8 +24,7 @@ color = Color(0.034721047, 0.07859425, 0.06395158, 1)
 
 [node name="StaticBody2D" parent="." unique_id=1804186600 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
 position = Vector2(466, 215)
-object = NodePath("../Object")
+object = NodePath("../Tool")
 
-[node name="Object" parent="." unique_id=1376676623 instance=ExtResource("2_bo1nx")]
-visible = false
-position = Vector2(100, 337)
+[node name="Object" parent="." unique_id=2086578169 instance=ExtResource("3_8gbba")]
+position = Vector2(816, 249)

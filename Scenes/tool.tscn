@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cr0ndea6x3djc"]
+
+[ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="1_fqtr4"]
+[ext_resource type="Texture2D" uid="uid://b1qo16vxwkpob" path="res://Assets/knifetemp.jpg" id="2_fqtr4"]
+
+[node name="Object" unique_id=1751848827 instance=ExtResource("1_fqtr4")]
+
+[node name="TextureRect" type="TextureRect" parent="." index="1" unique_id=1977999501]
+z_index = 1
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 59.0
+offset_bottom = 48.0
+texture = ExtResource("2_fqtr4")
+expand_mode = 1
