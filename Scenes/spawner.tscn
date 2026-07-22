@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c556trw15vef"]
+
+[ext_resource type="Texture2D" uid="uid://bikaf2nda2rps" path="res://Assets/Untitled_Artwork.png" id="1_2bop2"]
+[ext_resource type="Script" uid="uid://doo0bry8xdg47" path="res://Scripts/spawner.gd" id="1_xhbpr"]
+[ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="3_2ydn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(40, 38)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1804186600]
+input_pickable = true
+script = ExtResource("1_xhbpr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=200251358]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_u0ya7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=398590431]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("1_2bop2")
+expand_mode = 1
+
+[node name="Object" parent="." unique_id=1376676623 instance=ExtResource("3_2ydn3")]
+visible = false
+position = Vector2(4, 3)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

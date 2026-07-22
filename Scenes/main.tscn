@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://di7lv4icyqso4"]
+
+[ext_resource type="PackedScene" uid="uid://c556trw15vef" path="res://Scenes/spawner.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="2_bo1nx"]
+
+[node name="Node2D" type="Node2D" unique_id=669976395]
+
+[node name="Counter" type="ColorRect" parent="." unique_id=1862647301]
+offset_top = 424.0
+offset_right = 1038.0
+offset_bottom = 769.0
+
+[node name="Box" type="ColorRect" parent="." unique_id=1692228017]
+offset_left = 135.0
+offset_top = 519.0
+offset_right = 259.0
+offset_bottom = 647.0
+color = Color(0.034721047, 0.07859425, 0.06395158, 1)
+
+[node name="StaticBody2D" parent="." unique_id=1804186600 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
+position = Vector2(466, 215)
+object = NodePath("../Object")
+
+[node name="Object" parent="." unique_id=1376676623 instance=ExtResource("2_bo1nx")]
+visible = false
+position = Vector2(100, 337)
