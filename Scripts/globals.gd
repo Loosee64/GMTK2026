@@ -11,7 +11,9 @@ enum CombineType{
 
 enum ObjectType {
 	None,
-	Tool,
+	Effect,
 	Interactable,
-	Processor
+	Knife,
+	Processor,
+	Space
 }

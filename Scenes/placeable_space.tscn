@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d1dnmfhm5dhtt"]
+
+[ext_resource type="Script" uid="uid://ycg1v803bqwl" path="res://Scripts/placeable_space.gd" id="1_wpg6l"]
+
+[node name="Node2D" type="Area2D" unique_id=576513465]
+script = ExtResource("1_wpg6l")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

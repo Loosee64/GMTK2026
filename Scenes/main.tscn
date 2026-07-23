@@ -5,11 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://cr0ndea6x3djc" path="res://Scenes/tool.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b4v51y7ml8rlf" path="res://Scenes/burger.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bj74mok4kms3k" path="res://Scenes/processor.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://d1dnmfhm5dhtt" path="res://Scenes/placeable_space.tscn" id="6_21xkr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(412, 186)
 
 [node name="Node2D" type="Node2D" unique_id=669976395]
 
 [node name="Tool" parent="." unique_id=1751848827 instance=ExtResource("3_jjvhh")]
 visible = false
+type = 3
 
 [node name="ToolSpawner" parent="." unique_id=1804186600 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
 position = Vector2(466, 215)
@@ -42,3 +47,10 @@ combine_type = 3
 position = Vector2(629, 110)
 type = 2
 combine_type = 4
+
+[node name="BuildSpace" parent="." unique_id=576513465 instance=ExtResource("6_21xkr")]
+position = Vector2(565, 560)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildSpace" unique_id=922594813]
+position = Vector2(190, 89)
+shape = SubResource("RectangleShape2D_u0ya7")
