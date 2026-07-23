@@ -1,39 +1,142 @@
 [gd_scene format=3 uid="uid://di7lv4icyqso4"]
 
+[ext_resource type="Texture2D" uid="uid://ck4q5aqbo2gpg" path="res://Assets/Kitchen/kitchen_background.png" id="1_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://c556trw15vef" path="res://Scenes/spawner.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cka2ix7kuowjd" path="res://Scenes/interactable.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cr0ndea6x3djc" path="res://Scenes/tool.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b4v51y7ml8rlf" path="res://Scenes/burger.tscn" id="4_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://2t112rdmij24" path="res://Assets/Kitchen/knife_box.png" id="4_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://bj74mok4kms3k" path="res://Scenes/processor.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://d1dnmfhm5dhtt" path="res://Scenes/placeable_space.tscn" id="6_21xkr"]
-[ext_resource type="Script" uid="uid://bfdevwsd8k7v2" path="res://Scenes/button.gd" id="7_344ge"]
+[ext_resource type="Script" uid="uid://bfdevwsd8k7v2" path="res://Scripts/button.gd" id="7_344ge"]
+[ext_resource type="Texture2D" uid="uid://3jqtjdccvbl" path="res://Assets/Kitchen/oven_frier.png" id="8_k12tt"]
 [ext_resource type="PackedScene" uid="uid://csul7cyvtarnn" path="res://Scenes/the_line.tscn" id="8_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://ck6yqkusyuhc" path="res://Assets/Burger/LettuceWhole.png" id="9_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://bvqup43jt4ytc" path="res://Assets/burgertemp.jpg" id="10_k12tt"]
+[ext_resource type="Texture2D" uid="uid://bvebqemys77fb" path="res://Assets/Burger/PickleWhole.png" id="11_h1bgf"]
+[ext_resource type="Texture2D" uid="uid://8h6wnoiay3pq" path="res://Assets/oniontemp.jpg" id="15_h1bgf"]
+[ext_resource type="Texture2D" uid="uid://cuj15haf1dg3j" path="res://Assets/Burger/TomatoWhole.png" id="16_b3802"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtglo"]
+size = Vector2(121, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arba8"]
+size = Vector2(223, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fevyy"]
+atlas = ExtResource("8_k12tt")
+region = Rect2(0, 0, 1754, 1240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hibaj"]
+atlas = ExtResource("8_k12tt")
+region = Rect2(1754, 0, 1754, 1240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fevyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hibaj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
-size = Vector2(412, 186)
+size = Vector2(330, 173)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wt34f"]
+size = Vector2(123, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yex4w"]
+size = Vector2(117, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ashne"]
+size = Vector2(117, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t48w"]
+size = Vector2(123, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkvl2"]
+size = Vector2(89, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdsj5"]
+atlas = ExtResource("8_k12tt")
+region = Rect2(0, 1240, 1754, 1240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee4r6"]
+atlas = ExtResource("8_k12tt")
+region = Rect2(1754, 1240, 1754, 1240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dtglo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdsj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee4r6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyitb"]
+size = Vector2(247, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8g7pp"]
+size = Vector2(252, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwmae"]
+size = Vector2(89, 52)
 
 [node name="Node2D" type="Node2D" unique_id=669976395]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=85015130]
+offset_right = 1025.0
+offset_bottom = 763.0
+texture = ExtResource("1_fdnlq")
+expand_mode = 1
 
 [node name="Tool" parent="." unique_id=1751848827 instance=ExtResource("3_jjvhh")]
 visible = false
 type = 3
 
 [node name="ToolSpawner" parent="." unique_id=1804186600 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(466, 215)
+position = Vector2(385, 391)
 object = NodePath("../Tool")
 
-[node name="IngredientLettuce" parent="." unique_id=2086578169 instance=ExtResource("3_8gbba")]
-visible = false
-position = Vector2(-210, 242)
-type = 2
-combine_type = 2
+[node name="TextureRect" type="TextureRect" parent="ToolSpawner" unique_id=1141765767]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 123.0
+offset_bottom = 112.0
+texture = ExtResource("4_jkdf5")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToolSpawner" unique_id=821616857]
+position = Vector2(61, 58)
+shape = SubResource("RectangleShape2D_dtglo")
 
 [node name="Burger" parent="." unique_id=1207560214 groups=["Burger"] instance=ExtResource("4_jjvhh")]
-position = Vector2(201, 285)
+position = Vector2(709, 437)
 
-[node name="Processor" parent="." unique_id=2113361991 node_paths=PackedStringArray("object") instance=ExtResource("5_kry3j")]
-position = Vector2(144, 533)
+[node name="Grill" parent="." unique_id=2113361991 node_paths=PackedStringArray("object") instance=ExtResource("5_kry3j")]
+position = Vector2(77, 383)
 object = NodePath("../ProcessorSubObject")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grill" unique_id=483749699]
+position = Vector2(45.5, -31)
+shape = SubResource("RectangleShape2D_arba8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grill" unique_id=2144207231]
+position = Vector2(37, -39.999996)
+scale = Vector2(0.20752566, 0.19758065)
+sprite_frames = SubResource("SpriteFrames_u0ya7")
 
 [node name="ProcessorSubObject" parent="." unique_id=1742851292 instance=ExtResource("3_8gbba")]
 visible = false
@@ -41,36 +144,58 @@ position = Vector2(-413, 521)
 type = 1
 combine_type = 3
 
-[node name="IngredientBurger" parent="." unique_id=1158054680 instance=ExtResource("3_8gbba")]
-visible = false
-position = Vector2(-189, 602)
-type = 1
-combine_type = 3
-
-[node name="IngredientPickle" parent="." unique_id=2097636159 instance=ExtResource("3_8gbba")]
-visible = false
-position = Vector2(-205, 409)
-type = 2
-combine_type = 4
-
 [node name="BuildSpace" parent="." unique_id=576513465 instance=ExtResource("6_21xkr")]
 position = Vector2(565, 560)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuildSpace" unique_id=922594813]
-position = Vector2(190, 89)
+position = Vector2(4, 86.5)
 shape = SubResource("RectangleShape2D_u0ya7")
 
 [node name="LettuceSpawn" parent="." unique_id=1914355741 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(772, 185)
-object = NodePath("../IngredientLettuce")
+position = Vector2(244, 481)
+object = NodePath("../IngredientSpawns/IngredientLettuce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LettuceSpawn" unique_id=2075323476]
+position = Vector2(78.5, 44)
+shape = SubResource("RectangleShape2D_wt34f")
+
+[node name="TextureRect" type="TextureRect" parent="LettuceSpawn" unique_id=1320712038]
+offset_left = -34.0
+offset_top = -60.0
+offset_right = 192.0
+offset_bottom = 173.0
+texture = ExtResource("9_wsu2k")
+expand_mode = 1
 
 [node name="MeatSpawn" parent="." unique_id=1467168443 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(764, 357)
-object = NodePath("../IngredientBurger")
+position = Vector2(507, 448)
+object = NodePath("../IngredientSpawns/IngredientBurger")
+
+[node name="TextureRect" type="TextureRect" parent="MeatSpawn" unique_id=257315226]
+offset_left = 22.0
+offset_top = -7.0
+offset_right = 138.0
+offset_bottom = 87.0
+texture = ExtResource("10_k12tt")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeatSpawn" unique_id=910189220]
+position = Vector2(80.5, 39.5)
+shape = SubResource("RectangleShape2D_yex4w")
 
 [node name="PickleSpawn" parent="." unique_id=1091526461 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(929, 273)
-object = NodePath("../IngredientPickle")
+position = Vector2(191, 561)
+object = NodePath("../IngredientSpawns/IngredientPickle")
+
+[node name="TextureRect" type="TextureRect" parent="PickleSpawn" unique_id=1597567093]
+offset_right = 274.0
+offset_bottom = 241.0
+texture = ExtResource("11_h1bgf")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickleSpawn" unique_id=1923205960]
+position = Vector2(128.5, 74.5)
+shape = SubResource("RectangleShape2D_ashne")
 
 [node name="Button" type="Button" parent="." unique_id=1864972611]
 offset_left = 176.0
@@ -81,6 +206,97 @@ text = "Check Order"
 script = ExtResource("7_344ge")
 
 [node name="TheLine" parent="." unique_id=1341072480 instance=ExtResource("8_ynf5e")]
-position = Vector2(401, 14)
+position = Vector2(360, 317)
+
+[node name="OnionSpawn" parent="." unique_id=1648120355 instance=ExtResource("1_jjgbg")]
+position = Vector2(140, 524)
+scale = Vector2(0.9200012, 0.88)
+
+[node name="TextureRect" type="TextureRect" parent="OnionSpawn" unique_id=390084143]
+offset_left = -18.0
+offset_top = -53.0
+offset_right = 108.0
+offset_bottom = 62.0
+texture = ExtResource("15_h1bgf")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnionSpawn" unique_id=2060927140]
+position = Vector2(45.5, 4.5)
+shape = SubResource("RectangleShape2D_2t48w")
+
+[node name="TomatoSpawn" parent="." unique_id=694961211 instance=ExtResource("1_jjgbg")]
+position = Vector2(159, 625)
+
+[node name="TextureRect" type="TextureRect" parent="TomatoSpawn" unique_id=1275322278]
+offset_left = -78.0
+offset_top = -90.0
+offset_right = 139.0
+offset_bottom = 109.0
+texture = ExtResource("16_b3802")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TomatoSpawn" unique_id=424075190]
+position = Vector2(28.5, 9.5)
+shape = SubResource("RectangleShape2D_mkvl2")
+
+[node name="Frier" parent="." unique_id=2115380139 instance=ExtResource("5_kry3j")]
+position = Vector2(832, 511)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Frier" unique_id=600668456]
+position = Vector2(55, 148)
+scale = Vector2(0.17388825, 0.16451614)
+sprite_frames = SubResource("SpriteFrames_dtglo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frier" unique_id=1681384128]
+position = Vector2(42.5, 163.5)
+shape = SubResource("RectangleShape2D_cyitb")
+
+[node name="StoveTop" parent="." unique_id=1173172533 instance=ExtResource("5_kry3j")]
+position = Vector2(794, 510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoveTop" unique_id=1921911534]
+position = Vector2(82, 26)
+shape = SubResource("RectangleShape2D_8g7pp")
+
+[node name="BurgerSpawn" parent="." unique_id=1507839513 instance=ExtResource("1_jjgbg")]
+position = Vector2(277, 287)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurgerSpawn" unique_id=441679024]
+position = Vector2(16.5, 13)
+shape = SubResource("RectangleShape2D_kwmae")
+
+[node name="IngredientSpawns" type="Node" parent="." unique_id=1335391484]
+
+[node name="IngredientBurger" parent="IngredientSpawns" unique_id=1158054680 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-189, 602)
+type = 1
+combine_type = 3
+
+[node name="IngredientPickle" parent="IngredientSpawns" unique_id=2097636159 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-205, 409)
+type = 2
+combine_type = 4
+
+[node name="IngredientLettuce" parent="IngredientSpawns" unique_id=2086578169 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-210, 242)
+type = 2
+combine_type = 2
+
+[node name="IngredientOnion" parent="IngredientSpawns" unique_id=1453035447 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-280, 365)
+type = 2
+combine_type = 5
+
+[node name="IngredientTomato" parent="IngredientSpawns" unique_id=1253830008 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-230, 290)
+type = 2
+combine_type = 6
+
+[node name="Spawners" type="Node" parent="." unique_id=195775164]
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

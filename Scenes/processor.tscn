@@ -2,24 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cecirihw6ev2v" path="res://Scripts/processor.gd" id="1_t2ana"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
-size = Vector2(92, 83)
-
 [node name="Node2D" type="Area2D" unique_id=2113361991]
 script = ExtResource("1_t2ana")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1152618191]
-offset_left = -46.0
-offset_top = -42.0
-offset_right = 48.0
-offset_bottom = 43.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=686517399]
-z_index = 1
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_u0ya7")
 
 [node name="Timer" type="Timer" parent="." unique_id=1169626700]
 wait_time = 2.0

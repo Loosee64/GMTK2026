@@ -6,6 +6,8 @@ enum CombineType{
 	LETTUCE,
 	MEAT,
 	PICKLE,
+	ONION,
+	TOMATO,
 	BOTTOM_BUN
 }
 
