@@ -3,13 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="1_fqtr4"]
 [ext_resource type="Texture2D" uid="uid://b1qo16vxwkpob" path="res://Assets/knifetemp.jpg" id="2_fqtr4"]
 
-[node name="Object" unique_id=1751848827 instance=ExtResource("1_fqtr4")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fqtr4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="TextureRect" type="TextureRect" parent="." index="1" unique_id=1977999501]
+[node name="Object" unique_id=1751848827 instance=ExtResource("1_fqtr4")]
+type = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1707606779]
 z_index = 1
-offset_left = -63.0
-offset_top = -54.0
-offset_right = 59.0
-offset_bottom = 48.0
-texture = ExtResource("2_fqtr4")
-expand_mode = 1
+position = Vector2(-0.49999905, -2.9999995)
+scale = Vector2(0.2751678, 0.2281879)
+sprite_frames = SubResource("SpriteFrames_u0ya7")

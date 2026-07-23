@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://c556trw15vef" path="res://Scenes/spawner.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://cka2ix7kuowjd" path="res://Scenes/interactable.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cr0ndea6x3djc" path="res://Scenes/tool.tscn" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://b4v51y7ml8rlf" path="res://Scenes/burger.tscn" id="4_jjvhh"]
 
 [node name="Node2D" type="Node2D" unique_id=669976395]
 
 [node name="Tool" parent="." unique_id=1751848827 instance=ExtResource("3_jjvhh")]
 visible = false
-type = 0
 
 [node name="Counter" type="ColorRect" parent="." unique_id=1862647301]
 offset_top = 424.0
@@ -28,3 +28,8 @@ object = NodePath("../Tool")
 
 [node name="Object" parent="." unique_id=2086578169 instance=ExtResource("3_8gbba")]
 position = Vector2(816, 249)
+type = 2
+combine_type = 1
+
+[node name="Object2" parent="." unique_id=1207560214 instance=ExtResource("4_jjvhh")]
+position = Vector2(201, 285)

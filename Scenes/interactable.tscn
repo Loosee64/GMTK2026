@@ -1,14 +1,26 @@
 [gd_scene format=3 uid="uid://cka2ix7kuowjd"]
 
 [ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="1_pmsje"]
-[ext_resource type="Texture2D" uid="uid://bikaf2nda2rps" path="res://Assets/Untitled_Artwork.png" id="2_73reo"]
+[ext_resource type="Texture2D" uid="uid://scig185teo1d" path="res://Assets/templettuce.png" id="2_73reo"]
+[ext_resource type="Texture2D" uid="uid://w8i2kuui580e" path="res://Assets/Burger/LettuceCut.png" id="3_x0tmm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_73reo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x0tmm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Object" unique_id=1751848827 instance=ExtResource("1_pmsje")]
 
-[node name="TextureRect" type="TextureRect" parent="." index="1" unique_id=175595282]
-offset_left = -63.0
-offset_top = -54.0
-offset_right = 59.0
-offset_bottom = 48.0
-texture = ExtResource("2_73reo")
-expand_mode = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1576751883]
+position = Vector2(-4.7683716e-07, -3)
+scale = Vector2(0.14476745, 0.16742174)
+sprite_frames = SubResource("SpriteFrames_u0ya7")

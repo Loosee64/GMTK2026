@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b4v51y7ml8rlf"]
+
+[ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="1_ys118"]
+[ext_resource type="Script" uid="uid://bcwu11dnxevyf" path="res://Scripts/combine.gd" id="2_2pc64"]
+[ext_resource type="Texture2D" uid="uid://wtiupnovd537" path="res://Assets/Burger/BunBottom.png" id="3_6a7nn"]
+[ext_resource type="Script" uid="uid://dwasnfa78cev7" path="res://Scripts/burgerinternal.gd" id="4_6a7nn"]
+[ext_resource type="Texture2D" uid="uid://w8i2kuui580e" path="res://Assets/Burger/LettuceCut.png" id="4_g4fio"]
+[ext_resource type="Texture2D" uid="uid://vs31rf6uwjwv" path="res://Assets/Burger/BunTop.png" id="5_w6wxl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+
+[node name="Object" unique_id=1751848827 instance=ExtResource("1_ys118")]
+
+[node name="Node" type="Node2D" parent="." index="1" unique_id=695044495]
+script = ExtResource("2_2pc64")
+
+[node name="Bottom" type="TextureRect" parent="Node" index="0" unique_id=600788024]
+offset_left = -63.0
+offset_top = -55.0
+offset_right = 57.0
+offset_bottom = 48.0
+texture = ExtResource("3_6a7nn")
+expand_mode = 1
+script = ExtResource("4_6a7nn")
+
+[node name="Lettuce" type="TextureRect" parent="Node" index="1" unique_id=2051156899]
+visible = false
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 57.0
+offset_bottom = 47.0
+texture = ExtResource("4_g4fio")
+expand_mode = 1
+script = ExtResource("4_6a7nn")
+type = 1
+
+[node name="Top" type="TextureRect" parent="Node" index="2" unique_id=514539648]
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 57.0
+offset_bottom = 47.0
+texture = ExtResource("5_w6wxl")
+expand_mode = 1
+script = ExtResource("4_6a7nn")
+type = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=1195421103]
+sprite_frames = SubResource("SpriteFrames_u0ya7")
+
+[connection signal="object_dropped" from="." to="Node" method="_on_object_object_dropped"]
