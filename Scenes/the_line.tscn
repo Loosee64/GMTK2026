@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://csul7cyvtarnn"]
+
+[ext_resource type="Script" uid="uid://dbhfayj7jy27q" path="res://Scripts/the_line.gd" id="1_i5txc"]
+[ext_resource type="PackedScene" uid="uid://d1dnmfhm5dhtt" path="res://Scenes/placeable_space.tscn" id="2_trci8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(498, 58)
+
+[node name="Node2D" type="Node2D" unique_id=1341072480]
+script = ExtResource("1_i5txc")
+
+[node name="PlaceableSpace" parent="." unique_id=576513465 instance=ExtResource("2_trci8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceableSpace" unique_id=620011903]
+position = Vector2(239, 19)
+shape = SubResource("RectangleShape2D_u0ya7")

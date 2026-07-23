@@ -1,7 +1,10 @@
 extends Area2D
 
+var object
+
 func _on_area_entered(area: Object) -> void:
 	area.set_placeable(true)
+	object = area
 	print("placeable")
 
 
@@ -10,3 +13,6 @@ func _on_area_exited(area: Object) -> void:
 
 func get_type() -> Globals.ObjectType:
 	return Globals.ObjectType.Space
+
+func get_object() -> Object:
+	return object
