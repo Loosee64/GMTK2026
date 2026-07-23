@@ -5,6 +5,7 @@ enum CombineType{
 	TOP_BUN,
 	LETTUCE,
 	MEAT,
+	PICKLE,
 	BOTTOM_BUN
 }
 

@@ -28,6 +28,7 @@ position = Vector2(144, 533)
 object = NodePath("../ProcessorSubObject")
 
 [node name="ProcessorSubObject" parent="." unique_id=1742851292 instance=ExtResource("3_8gbba")]
+visible = false
 position = Vector2(-413, 521)
 type = 1
 combine_type = 3
@@ -36,3 +37,8 @@ combine_type = 3
 position = Vector2(782, 470)
 type = 1
 combine_type = 3
+
+[node name="IngredientPickle" parent="." unique_id=2097636159 instance=ExtResource("3_8gbba")]
+position = Vector2(629, 110)
+type = 2
+combine_type = 4

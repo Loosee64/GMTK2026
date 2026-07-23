@@ -62,6 +62,8 @@ func change_animation(recieved_type : Globals.CombineType) -> void:
 			animated_sprite_2d.animation = "lettuce"
 		Globals.CombineType.MEAT:
 			animated_sprite_2d.animation = "meat"
+		Globals.CombineType.PICKLE:
+			animated_sprite_2d.animation = "pickle"
 		Globals.CombineType.NONE:
 			pass
 	

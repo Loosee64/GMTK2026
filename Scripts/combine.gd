@@ -3,6 +3,7 @@ extends Node2D
 @onready var lettuce: TextureRect = $Lettuce
 @onready var top: TextureRect = $Top
 @onready var meat: TextureRect = $Meat
+@onready var pickle: TextureRect = $Pickle
 
 
 func _on_object_object_dropped(type: Globals.CombineType) -> void:
@@ -11,3 +12,5 @@ func _on_object_object_dropped(type: Globals.CombineType) -> void:
 			lettuce.visible = true
 		Globals.CombineType.MEAT:
 			meat.visible = true
+		Globals.CombineType.PICKLE:
+			pickle.visible = true

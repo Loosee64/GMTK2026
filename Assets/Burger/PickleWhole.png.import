@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkbl3jitwwt1b"
-path="res://.godot/imported/PickleCut.png-373d0a0c1a9f8e32338d6f547c23b059.ctex"
+uid="uid://bvebqemys77fb"
+path="res://.godot/imported/PickleWhole.png-75cc399a2e06060a9663122044a16251.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Burger/PickleCut.png"
-dest_files=["res://.godot/imported/PickleCut.png-373d0a0c1a9f8e32338d6f547c23b059.ctex"]
+source_file="res://Assets/Burger/PickleWhole.png"
+dest_files=["res://.godot/imported/PickleWhole.png-75cc399a2e06060a9663122044a16251.ctex"]
 
 [params]
 

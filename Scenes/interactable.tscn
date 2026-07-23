@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://w8i2kuui580e" path="res://Assets/Burger/LettuceCut.png" id="3_x0tmm"]
 [ext_resource type="Texture2D" uid="uid://bvqup43jt4ytc" path="res://Assets/burgertemp.jpg" id="4_k246y"]
 [ext_resource type="Texture2D" uid="uid://cxcv6c8k6drjd" path="res://Assets/Burger/PattyCooked.png" id="5_1erql"]
+[ext_resource type="Texture2D" uid="uid://bvebqemys77fb" path="res://Assets/Burger/PickleWhole.png" id="6_exs7o"]
+[ext_resource type="Texture2D" uid="uid://dkbl3jitwwt1b" path="res://Assets/Burger/PickleCut.png" id="7_e4y7p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 animations = [{
@@ -29,6 +31,17 @@ animations = [{
 "loop": 1,
 "name": &"meat",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_exs7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e4y7p")
+}],
+"loop": 1,
+"name": &"pickle",
+"speed": 5.0
 }]
 
 [node name="Object" unique_id=1751848827 instance=ExtResource("1_pmsje")]
@@ -37,6 +50,6 @@ animations = [{
 position = Vector2(-2.999999, -4.500002)
 scale = Vector2(0.26666665, 0.28055555)
 sprite_frames = SubResource("SpriteFrames_u0ya7")
-animation = &"lettuce"
+animation = &"pickle"
 
 [connection signal="ready" from="." to="." method="_on_ready"]
