@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bikaf2nda2rps" path="res://Assets/Untitled_Artwork.png" id="1_2bop2"]
 [ext_resource type="Script" uid="uid://doo0bry8xdg47" path="res://Scripts/spawner.gd" id="1_xhbpr"]
-[ext_resource type="PackedScene" uid="uid://cr0ndea6x3djc" path="res://Scenes/tool.tscn" id="3_xhbpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
 size = Vector2(40, 38)
@@ -22,8 +21,5 @@ offset_right = 20.0
 offset_bottom = 20.0
 texture = ExtResource("1_2bop2")
 expand_mode = 1
-
-[node name="Object" parent="." unique_id=1751848827 instance=ExtResource("3_xhbpr")]
-visible = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

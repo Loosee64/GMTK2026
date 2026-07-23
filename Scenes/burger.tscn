@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dwasnfa78cev7" path="res://Scripts/burgerinternal.gd" id="4_6a7nn"]
 [ext_resource type="Texture2D" uid="uid://w8i2kuui580e" path="res://Assets/Burger/LettuceCut.png" id="4_g4fio"]
 [ext_resource type="Texture2D" uid="uid://vs31rf6uwjwv" path="res://Assets/Burger/BunTop.png" id="5_w6wxl"]
+[ext_resource type="Texture2D" uid="uid://cxcv6c8k6drjd" path="res://Assets/Burger/PattyCooked.png" id="6_g4fio"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 
@@ -34,7 +35,18 @@ expand_mode = 1
 script = ExtResource("4_6a7nn")
 type = 1
 
-[node name="Top" type="TextureRect" parent="Node" index="2" unique_id=514539648]
+[node name="Meat" type="TextureRect" parent="Node" index="2" unique_id=1558949565]
+visible = false
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 57.0
+offset_bottom = 47.0
+texture = ExtResource("6_g4fio")
+expand_mode = 1
+script = ExtResource("4_6a7nn")
+type = 2
+
+[node name="Top" type="TextureRect" parent="Node" index="3" unique_id=514539648]
 offset_left = -63.0
 offset_top = -54.0
 offset_right = 57.0

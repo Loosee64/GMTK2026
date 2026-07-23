@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="1_pmsje"]
 [ext_resource type="Texture2D" uid="uid://scig185teo1d" path="res://Assets/templettuce.png" id="2_73reo"]
 [ext_resource type="Texture2D" uid="uid://w8i2kuui580e" path="res://Assets/Burger/LettuceCut.png" id="3_x0tmm"]
+[ext_resource type="Texture2D" uid="uid://bvqup43jt4ytc" path="res://Assets/burgertemp.jpg" id="4_k246y"]
+[ext_resource type="Texture2D" uid="uid://cxcv6c8k6drjd" path="res://Assets/Burger/PattyCooked.png" id="5_1erql"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 animations = [{
@@ -14,13 +16,27 @@ animations = [{
 "texture": ExtResource("3_x0tmm")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"lettuce",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k246y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1erql")
+}],
+"loop": 1,
+"name": &"meat",
 "speed": 5.0
 }]
 
 [node name="Object" unique_id=1751848827 instance=ExtResource("1_pmsje")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1576751883]
-position = Vector2(-4.7683716e-07, -3)
-scale = Vector2(0.14476745, 0.16742174)
+position = Vector2(-2.999999, -4.500002)
+scale = Vector2(0.26666665, 0.28055555)
 sprite_frames = SubResource("SpriteFrames_u0ya7")
+animation = &"lettuce"
+
+[connection signal="ready" from="." to="." method="_on_ready"]

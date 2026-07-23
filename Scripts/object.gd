@@ -1,45 +1,47 @@
 extends Node2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+@export var type = Globals.ObjectType.None
+@export var combine_type = Globals.CombineType.NONE
+
+var current_animation_frame = 0
+
 signal object_dropped(type)
 
-enum ObjectType {
-	None,
-	Tool,
-	Interactable
-}
-
-@export var type = ObjectType.None
-@export var combine_type = Globals.CombineType.BOTTOM_BUN
-
 var dragging = false
-var execute_collision = ObjectType.None
-var collision_combine = Globals.CombineType.BOTTOM_BUN
+var execute_collision = Globals.ObjectType.None
+var collision_combine = Globals.CombineType.NONE
 
-func _process(delta: float) -> void:
+func _on_ready() -> void:
+	change_animation(combine_type)
+
+func _process(_delta: float) -> void:
 	if dragging:
 		position = get_global_mouse_position()
+	animated_sprite_2d.frame = current_animation_frame
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		dragging = true
 	elif event.is_action_released("click"):
-		if dragging && type == ObjectType.Tool:
+		if dragging && type == Globals.ObjectType.Tool:
 			visible = false
 		dragging = false
-		if type == ObjectType.Interactable:
-			if execute_collision == ObjectType.Tool:
-				animated_sprite_2d.frame = 1
-				type = ObjectType.Tool
+		if type == Globals.ObjectType.Interactable:
+			if execute_collision == Globals.ObjectType.Tool:
+				current_animation_frame = 1
+				type = Globals.ObjectType.Tool
 		else:
-			if execute_collision == ObjectType.Tool:
+			if execute_collision == Globals.ObjectType.Tool || execute_collision == Globals.ObjectType.Processor:
 				emit_signal("object_dropped", collision_combine)
+				collision_combine = Globals.CombineType.NONE
 
 func spawn() -> void:
 	dragging = true
 	position = get_global_mouse_position()
 	visible = true
 
-func get_type() -> ObjectType:
+func get_type() -> Globals.ObjectType:
 	return type
 	
 func get_combine() -> Globals.CombineType:
@@ -47,8 +49,19 @@ func get_combine() -> Globals.CombineType:
 
 func _on_area_entered(area: Area2D) -> void:
 	execute_collision = area.get_type()
-	collision_combine = area.get_combine()
+	if execute_collision != Globals.ObjectType.Processor && collision_combine == Globals.CombineType.NONE:
+		collision_combine = area.get_combine()
+		print(collision_combine)
 
+func _on_area_exited(_area: Area2D) -> void:
+	execute_collision = Globals.ObjectType.None
 
-func _on_area_exited(area: Area2D) -> void:
-	execute_collision = ObjectType.None
+func change_animation(recieved_type : Globals.CombineType) -> void:
+	match recieved_type:
+		Globals.CombineType.LETTUCE:
+			animated_sprite_2d.animation = "lettuce"
+		Globals.CombineType.MEAT:
+			animated_sprite_2d.animation = "meat"
+		Globals.CombineType.NONE:
+			pass
+	
