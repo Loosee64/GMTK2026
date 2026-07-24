@@ -7,25 +7,28 @@ var current_object_combine_type : Globals.CombineType
 @onready var timer: Timer = $Timer
 var scale_value = 1
 var scale_direction = 1
-var initial_scale = scale
+var initial_scale
 var running = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	animated_sprite_2d.animation = animation_name
+	initial_scale = animated_sprite_2d.scale
+	scale_value = initial_scale.x
 
 func _process(_delta: float) -> void:
 	if running:
 		animated_sprite_2d.frame = 1
-		if scale_value >= 1.6:
+		if scale_value >= initial_scale.x + 0.05:
 			scale_direction = -1
-		elif scale_value < 1:
+		elif scale_value < initial_scale.x:
 			scale_direction = 1
-		scale_value += 0.01 * scale_direction
-		scale.x = scale_value
-		scale.y = scale_value
+		scale_value += 0.001 * scale_direction
+		animated_sprite_2d.scale.x = scale_value
+		animated_sprite_2d.scale.y = scale_value
 	else:
-		scale = initial_scale
+		animated_sprite_2d.scale = initial_scale
+		scale_value = initial_scale.x
 
 func _on_area_entered(area: Area2D) -> void:
 	area.object_dropped.connect(_add_to_process)

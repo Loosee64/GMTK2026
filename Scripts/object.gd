@@ -39,6 +39,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 				current_animation_frame = 0
 				if type != Globals.ObjectType.Knife:
 					type = starting_type
+					Globals.mistake.emit(5)
 			elif !placeable:
 				position = last_position
 		dragging = false

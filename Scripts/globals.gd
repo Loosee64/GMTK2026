@@ -19,3 +19,8 @@ enum ObjectType {
 	Processor,
 	Space
 }
+
+signal mistake(strength)
+signal calm_chef(strength)
+signal enter_back_room
+signal exit_back_room

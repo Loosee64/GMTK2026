@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://d1jsebflis8yd"]
 
 [ext_resource type="Texture2D" uid="uid://barf03ax5j35j" path="res://Assets/Back Room/murder room.png" id="1_0227n"]
-[ext_resource type="Texture2D" uid="uid://bm8tgkaasgd5r" path="res://Assets/Back Room/chef_evil.png" id="2_ncpjq"]
+[ext_resource type="Script" uid="uid://c8jqiviam6yph" path="res://Scripts/back_room.gd" id="1_ncpjq"]
+[ext_resource type="Texture2D" uid="uid://bgo18oj6065vp" path="res://Assets/Chef/chef_phase_3.png" id="3_ncpjq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ncpjq")
+"texture": ExtResource("3_ncpjq")
 }],
 "loop": 1,
 "name": &"default",
@@ -15,6 +16,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=1090493573]
+script = ExtResource("1_ncpjq")
 
 [node name="Background" type="TextureRect" parent="." unique_id=323284554]
 offset_right = 1022.0
@@ -23,6 +25,7 @@ texture = ExtResource("1_0227n")
 expand_mode = 1
 
 [node name="ChefSprite" type="AnimatedSprite2D" parent="." unique_id=488874181]
-position = Vector2(534, 369.00003)
-scale = Vector2(0.5153509, 0.6925926)
+visible = false
+position = Vector2(466, 374)
+scale = Vector2(0.72870374, 0.7287037)
 sprite_frames = SubResource("SpriteFrames_u0ya7")

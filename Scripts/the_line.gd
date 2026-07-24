@@ -3,6 +3,8 @@ extends Node2D
 var current_order = {}
 var current_plate = {}
 @onready var placeable_space: Area2D = $PlaceableSpace
+@export var timer : Timer
+@onready var chef: AnimatedSprite2D = $"../Chef"
 
 func _ready() -> void:
 	random_order()
@@ -20,8 +22,10 @@ func check_order() -> bool:
 func process_order() -> void:
 	if check_order():
 		print("yes")
+		timer.start(timer.time_left + 10 - chef.get_aggression_factor())
 	else:
 		print("no")
+		Globals.mistake.emit(10)
 
 
 func _on_placeable_space_area_entered(area: Area2D) -> void:
