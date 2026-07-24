@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bc6ja7egfjpxr"]
+
+[ext_resource type="Script" uid="uid://d3cku5vu4xfws" path="res://Scenes/screens/main.gd" id="1_0mp8l"]
+[ext_resource type="PackedScene" uid="uid://di7lv4icyqso4" path="res://Scenes/screens/kitchen.tscn" id="1_j1mco"]
+[ext_resource type="PackedScene" uid="uid://d1jsebflis8yd" path="res://Scenes/screens/back_room.tscn" id="2_8j02x"]
+
+[node name="Main" type="Node2D" unique_id=1708709195]
+script = ExtResource("1_0mp8l")
+
+[node name="Kitchen" parent="." unique_id=669976395 instance=ExtResource("1_j1mco")]
+position = Vector2(1, -1)
+
+[node name="SwitchToBack" type="Button" parent="Kitchen" unique_id=1046025011]
+offset_right = 108.0
+offset_bottom = 58.0
+text = "To Back"
+
+[node name="BackRoom" parent="." unique_id=1090493573 instance=ExtResource("2_8j02x")]
+visible = false
+
+[node name="SwitchToKitchen" type="Button" parent="BackRoom" unique_id=1242454428]
+offset_left = 915.0
+offset_top = 1.0
+offset_right = 1023.0
+offset_bottom = 59.0
+text = "To Kitchen"
+
+[connection signal="pressed" from="Kitchen/SwitchToBack" to="." method="_on_switch_to_back_pressed"]
+[connection signal="pressed" from="BackRoom/SwitchToKitchen" to="." method="_on_switch_to_kitchen_pressed"]

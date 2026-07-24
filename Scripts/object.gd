@@ -4,6 +4,8 @@ extends Node2D
 @export var type = Globals.ObjectType.None
 @export var combine_type = Globals.CombineType.NONE
 
+var starting_type
+
 var current_animation_frame = 0
 
 var placeable = false
@@ -17,6 +19,7 @@ var collision_combine = Globals.CombineType.NONE
 
 func _on_ready() -> void:
 	change_animation(combine_type)
+	starting_type = type
 
 func _process(_delta: float) -> void:
 	if dragging:
@@ -33,6 +36,9 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			if type == Globals.ObjectType.Knife || type == Globals.ObjectType.Effect:
 				visible = false
 				position.x = -1000
+				current_animation_frame = 0
+				if type != Globals.ObjectType.Knife:
+					type = starting_type
 			elif !placeable:
 				position = last_position
 		dragging = false
@@ -73,6 +79,10 @@ func change_animation(recieved_type : Globals.CombineType) -> void:
 			animated_sprite_2d.animation = "meat"
 		Globals.CombineType.PICKLE:
 			animated_sprite_2d.animation = "pickle"
+		Globals.CombineType.ONION:
+			animated_sprite_2d.animation = "onion"
+		Globals.CombineType.TOMATO:
+			animated_sprite_2d.animation = "tomato"
 		Globals.CombineType.NONE:
 			pass
 

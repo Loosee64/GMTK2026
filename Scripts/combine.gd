@@ -4,6 +4,8 @@ extends Node2D
 @onready var top: TextureRect = $Top
 @onready var meat: TextureRect = $Meat
 @onready var pickle: TextureRect = $Pickle
+@onready var onion: TextureRect = $Onion
+@onready var tomato: TextureRect = $Tomato
 
 var current = {}
 
@@ -18,6 +20,12 @@ func _on_object_object_dropped(type: Globals.CombineType) -> void:
 		Globals.CombineType.PICKLE:
 			pickle.visible = true
 			current.set("pickle",1)
+		Globals.CombineType.ONION:
+			onion.visible = true
+			current.set("onion",1)
+		Globals.CombineType.TOMATO:
+			tomato.visible = true
+			current.set("tomato",1)
 
 func get_current():
 	return current

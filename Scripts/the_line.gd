@@ -13,7 +13,6 @@ func random_order() -> void:
 	current_order.set("meat",1)
 
 func check_order() -> bool:
-	current_plate = get_tree().get_nodes_in_group("Burger").get(0).get_child(1).get_current()
 	if current_plate == current_order:
 		return true
 	return false
@@ -23,3 +22,15 @@ func process_order() -> void:
 		print("yes")
 	else:
 		print("no")
+
+
+func _on_placeable_space_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Burger"):
+		current_plate = area.get_child(1).get_current()
+		print(current_plate)
+
+
+func _on_placeable_space_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Burger"):
+		current_plate = {}
+		print(current_plate)

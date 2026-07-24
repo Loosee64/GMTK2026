@@ -1,12 +1,61 @@
 [gd_scene format=3 uid="uid://bj74mok4kms3k"]
 
 [ext_resource type="Script" uid="uid://cecirihw6ev2v" path="res://Scripts/processor.gd" id="1_t2ana"]
+[ext_resource type="Texture2D" uid="uid://3jqtjdccvbl" path="res://Assets/Kitchen/oven_frier.png" id="2_m4e83"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee4r6"]
+atlas = ExtResource("2_m4e83")
+region = Rect2(1754, 1240, 1754, 1240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdsj5"]
+atlas = ExtResource("2_m4e83")
+region = Rect2(0, 1240, 1754, 1240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hibaj"]
+atlas = ExtResource("2_m4e83")
+region = Rect2(1754, 0, 1754, 1240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fevyy"]
+atlas = ExtResource("2_m4e83")
+region = Rect2(0, 0, 1754, 1240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t2ana"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee4r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdsj5")
+}],
+"loop": 1,
+"name": &"frier",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hibaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fevyy")
+}],
+"loop": 1,
+"name": &"grill",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Area2D" unique_id=2113361991]
 script = ExtResource("1_t2ana")
 
 [node name="Timer" type="Timer" parent="." unique_id=1169626700]
 wait_time = 2.0
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1821418154]
+position = Vector2(-1, 0)
+scale = Vector2(0.174, 0.165)
+sprite_frames = SubResource("SpriteFrames_t2ana")
+animation = &"grill"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

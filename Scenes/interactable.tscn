@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bvqup43jt4ytc" path="res://Assets/burgertemp.jpg" id="4_k246y"]
 [ext_resource type="Texture2D" uid="uid://cxcv6c8k6drjd" path="res://Assets/Burger/PattyCooked.png" id="5_1erql"]
 [ext_resource type="Texture2D" uid="uid://bvebqemys77fb" path="res://Assets/Burger/PickleWhole.png" id="6_exs7o"]
+[ext_resource type="Texture2D" uid="uid://8h6wnoiay3pq" path="res://Assets/oniontemp.jpg" id="6_kjehn"]
+[ext_resource type="Texture2D" uid="uid://ngekbb1ds7sp" path="res://Assets/Burger/OnionCut.png" id="7_da3o3"]
 [ext_resource type="Texture2D" uid="uid://dkbl3jitwwt1b" path="res://Assets/Burger/PickleCut.png" id="7_e4y7p"]
+[ext_resource type="Texture2D" uid="uid://cuj15haf1dg3j" path="res://Assets/Burger/TomatoWhole.png" id="10_ir1gf"]
+[ext_resource type="Texture2D" uid="uid://dtn4f484oamj3" path="res://Assets/Burger/TomatoCut.png" id="11_pcso2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 animations = [{
@@ -34,6 +38,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_kjehn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_da3o3")
+}],
+"loop": 1,
+"name": &"onion",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_exs7o")
 }, {
 "duration": 1.0,
@@ -41,6 +56,17 @@ animations = [{
 }],
 "loop": 1,
 "name": &"pickle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ir1gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pcso2")
+}],
+"loop": 1,
+"name": &"tomato",
 "speed": 5.0
 }]
 
@@ -50,6 +76,6 @@ animations = [{
 position = Vector2(-2.999999, -4.500002)
 scale = Vector2(0.26666665, 0.28055555)
 sprite_frames = SubResource("SpriteFrames_u0ya7")
-animation = &"pickle"
+animation = &"onion"
 
 [connection signal="ready" from="." to="." method="_on_ready"]

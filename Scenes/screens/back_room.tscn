@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d1jsebflis8yd"]
+
+[ext_resource type="Texture2D" uid="uid://barf03ax5j35j" path="res://Assets/Back Room/murder room.png" id="1_0227n"]
+[ext_resource type="Texture2D" uid="uid://bm8tgkaasgd5r" path="res://Assets/Back Room/chef_evil.png" id="2_ncpjq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ncpjq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1090493573]
+
+[node name="Background" type="TextureRect" parent="." unique_id=323284554]
+offset_right = 1022.0
+offset_bottom = 765.0
+texture = ExtResource("1_0227n")
+expand_mode = 1
+
+[node name="ChefSprite" type="AnimatedSprite2D" parent="." unique_id=488874181]
+position = Vector2(534, 369.00003)
+scale = Vector2(0.5153509, 0.6925926)
+sprite_frames = SubResource("SpriteFrames_u0ya7")
