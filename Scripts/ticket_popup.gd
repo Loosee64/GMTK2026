@@ -1,0 +1,36 @@
+extends Control
+
+var current_order = {}
+var line_ref
+
+@onready var lettuce: TextureRect = $Panel/TextureRect/Node/Lettuce
+@onready var meat: TextureRect = $Panel/TextureRect/Node/Meat
+@onready var tomato: TextureRect = $Panel/TextureRect/Node/Tomato
+@onready var onion: TextureRect = $Panel/TextureRect/Node/Onion
+@onready var pickle: TextureRect = $Panel/TextureRect/Node/Pickle
+
+func _ready() -> void:
+	var all_children = get_parent().get_children()
+	for child in all_children:
+		if child.is_in_group("The_Line"):
+			line_ref = child
+			break
+
+func _on_texture_button_pressed() -> void:
+	visible = false
+
+func popup():
+	if line_ref != null:
+		current_order = line_ref.get_current_order()
+	
+	if current_order != {}:
+		if current_order.get("lettuce") == 1:
+			lettuce.visible = true
+		if current_order.get("meat") == 1:
+			meat.visible = true
+		if current_order.get("tomato") == 1:
+			tomato.visible = true
+		if current_order.get("onion") == 1:
+			onion.visible = true
+		if current_order.get("pickle") == 1:
+			pickle.visible = true

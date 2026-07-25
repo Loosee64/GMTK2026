@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://bikpnlmq2ium5"]
+
+[ext_resource type="Script" uid="uid://di121toyeg4i2" path="res://Scripts/ticket_popup.gd" id="1_bui86"]
+[ext_resource type="Texture2D" uid="uid://dc7s7fax57jhj" path="res://Assets/Kitchen/misc_assets.png" id="2_j3caa"]
+[ext_resource type="Texture2D" uid="uid://wtiupnovd537" path="res://Assets/Burger/BunBottom.png" id="3_iq6ha"]
+[ext_resource type="Texture2D" uid="uid://5xtrqmyr8q1t" path="res://Assets/UI/button_long.tres" id="3_rv0ic"]
+[ext_resource type="Texture2D" uid="uid://w8i2kuui580e" path="res://Assets/Burger/LettuceCut.png" id="4_h3ud8"]
+[ext_resource type="Texture2D" uid="uid://cxcv6c8k6drjd" path="res://Assets/Burger/PattyCooked.png" id="5_n2ay0"]
+[ext_resource type="Texture2D" uid="uid://dtn4f484oamj3" path="res://Assets/Burger/TomatoCut.png" id="6_nkr2a"]
+[ext_resource type="Texture2D" uid="uid://ngekbb1ds7sp" path="res://Assets/Burger/OnionCut.png" id="7_bfuny"]
+[ext_resource type="Texture2D" uid="uid://dkbl3jitwwt1b" path="res://Assets/Burger/PickleCut.png" id="8_i2fnl"]
+[ext_resource type="Texture2D" uid="uid://vs31rf6uwjwv" path="res://Assets/Burger/BunTop.png" id="9_0u4s7"]
+
+[node name="Control" type="Control" unique_id=1132334488]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bui86")
+
+[node name="Panel" type="Panel" parent="." unique_id=289001941]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 111.0
+offset_right = 675.0
+offset_bottom = 495.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1423889043]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -2.0
+offset_right = -12.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j3caa")
+expand_mode = 1
+
+[node name="Node" type="Node2D" parent="Panel/TextureRect" unique_id=969555916]
+position = Vector2(200, 163)
+
+[node name="Bottom" type="TextureRect" parent="Panel/TextureRect/Node" unique_id=1751763101]
+offset_left = -63.0
+offset_top = -55.0
+offset_right = 57.0
+offset_bottom = 48.0
+texture = ExtResource("3_iq6ha")
+expand_mode = 1
+
+[node name="Lettuce" type="TextureRect" parent="Panel/TextureRect/Node" unique_id=693416515]
+visible = false
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 57.0
+offset_bottom = 47.0
+texture = ExtResource("4_h3ud8")
+expand_mode = 1
+
+[node name="Meat" type="TextureRect" parent="Panel/TextureRect/Node" unique_id=919292700]
+visible = false
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 57.0
+offset_bottom = 47.0
+texture = ExtResource("5_n2ay0")
+expand_mode = 1
+
+[node name="Tomato" type="TextureRect" parent="Panel/TextureRect/Node" unique_id=507987655]
+visible = false
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 57.0
+offset_bottom = 47.0
+texture = ExtResource("6_nkr2a")
+expand_mode = 1
+
+[node name="Onion" type="TextureRect" parent="Panel/TextureRect/Node" unique_id=439632311]
+visible = false
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 57.0
+offset_bottom = 47.0
+texture = ExtResource("7_bfuny")
+expand_mode = 1
+
+[node name="Pickle" type="TextureRect" parent="Panel/TextureRect/Node" unique_id=1609260442]
+visible = false
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 57.0
+offset_bottom = 47.0
+texture = ExtResource("8_i2fnl")
+expand_mode = 1
+
+[node name="Top" type="TextureRect" parent="Panel/TextureRect/Node" unique_id=710692632]
+offset_left = -63.0
+offset_top = -54.0
+offset_right = 57.0
+offset_bottom = 47.0
+texture = ExtResource("9_0u4s7")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="Panel" unique_id=714560368]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 282.0
+offset_right = 313.0
+offset_bottom = 342.0
+texture_normal = ExtResource("3_rv0ic")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/TextureButton" unique_id=686774020]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 19.0
+offset_right = 188.0
+offset_bottom = 66.0
+text = "Close"
+
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_texture_button_pressed"]

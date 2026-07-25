@@ -13,6 +13,9 @@ func random_order() -> void:
 	current_order.set("lettuce",1)
 	current_order.set("pickle",1)
 	current_order.set("meat",1)
+	current_order.set("onion",1)
+	current_order.set("tomato",1)
+	
 
 func check_order() -> bool:
 	if current_plate == current_order:
@@ -27,6 +30,8 @@ func process_order() -> void:
 		print("no")
 		Globals.mistake.emit(10)
 
+func get_current_order():
+	return current_order
 
 func _on_placeable_space_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Burger"):

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4lvl1ql1q72y"]
 
-[ext_resource type="Script" uid="uid://djurdey2ipqe8" path="res://timer_bar.gd" id="1_gsm4l"]
+[ext_resource type="Script" uid="uid://djurdey2ipqe8" path="res://Scripts/timer_bar.gd" id="1_gsm4l"]
 
 [node name="ProgressBar" type="ProgressBar" unique_id=2017483841]
 offset_right = 239.0
