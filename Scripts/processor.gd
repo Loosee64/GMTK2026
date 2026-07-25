@@ -37,12 +37,10 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_area_exited(area: Area2D) -> void:
 	area.object_dropped.disconnect(_add_to_process)
-	print("removed")
 
 
 func _add_to_process(_type) -> void:
 	if object != null:
-		print("processing")
 		object.current_animation_frame = 1
 		object.change_animation(current_object_combine_type)
 		timer.start()

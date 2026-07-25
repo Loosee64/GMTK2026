@@ -184,6 +184,8 @@ shape = SubResource("RectangleShape2D_dtglo")
 
 [node name="Burger" parent="." unique_id=1207560214 groups=["Burger"] instance=ExtResource("4_jjvhh")]
 position = Vector2(709, 437)
+type = 6
+combine_type = 0
 
 [node name="GrillSubObject" parent="." unique_id=1742851292 instance=ExtResource("3_8gbba")]
 visible = false
@@ -221,7 +223,7 @@ position = Vector2(370, 316)
 timer = NodePath("../EndTimer")
 
 [node name="Frier" parent="." unique_id=2115380139 instance=ExtResource("5_kry3j")]
-position = Vector2(897, 658)
+position = Vector2(1240, 701)
 animation_name = "frier"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frier" unique_id=1681384128]
@@ -229,7 +231,7 @@ position = Vector2(-18, 9)
 shape = SubResource("RectangleShape2D_cyitb")
 
 [node name="StoveTop" parent="." unique_id=1173172533 instance=ExtResource("5_kry3j")]
-position = Vector2(903, 503)
+position = Vector2(1229, 482)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoveTop" unique_id=1921911534]
 position = Vector2(-2, 15)

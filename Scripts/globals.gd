@@ -8,7 +8,6 @@ enum CombineType{
 	PICKLE,
 	ONION,
 	TOMATO,
-	BOTTOM_BUN
 }
 
 enum ObjectType {
@@ -17,7 +16,8 @@ enum ObjectType {
 	Interactable,
 	Knife,
 	Processor,
-	Space
+	Space,
+	Plate
 }
 
 signal mistake(strength)

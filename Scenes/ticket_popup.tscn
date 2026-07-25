@@ -42,7 +42,8 @@ texture = ExtResource("2_j3caa")
 expand_mode = 1
 
 [node name="Node" type="Node2D" parent="Panel/TextureRect" unique_id=969555916]
-position = Vector2(200, 163)
+position = Vector2(201, 199)
+scale = Vector2(2.5, 2.5)
 
 [node name="Bottom" type="TextureRect" parent="Panel/TextureRect/Node" unique_id=1751763101]
 offset_left = -63.0

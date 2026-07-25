@@ -35,11 +35,9 @@ func _process(delta: float) -> void:
 func anger_chef(strength):
 	aggression += strength * aggression_modifier
 	play(current_animation)
-	print("anger chef")
 
 func calm_chef(strength):
 	aggression -= strength
-	print("calm chef")
 
 func get_aggression_factor() -> int:
 	if !in_back_room:

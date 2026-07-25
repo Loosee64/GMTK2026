@@ -15,10 +15,11 @@ signal object_dropped(type)
 
 var dragging = false
 var execute_collision = Globals.ObjectType.None
-var collision_combine = Globals.CombineType.NONE
+var execute_combine : Globals.CombineType
 
 func _on_ready() -> void:
 	change_animation(combine_type)
+	#combine_type = combine_type
 	starting_type = type
 
 func _process(_delta: float) -> void:
@@ -35,9 +36,10 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		if dragging:
 			if type == Globals.ObjectType.Knife || type == Globals.ObjectType.Effect:
 				visible = false
+				set_process(false)
 				position.x = -1000
 				current_animation_frame = 0
-				if type != Globals.ObjectType.Knife:
+				if type != Globals.ObjectType.Knife && execute_collision != Globals.ObjectType.Plate:
 					type = starting_type
 					Globals.mistake.emit(5)
 			elif !placeable:
@@ -49,8 +51,8 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 				type = Globals.ObjectType.Effect
 		else:
 			if execute_collision == Globals.ObjectType.Effect || execute_collision == Globals.ObjectType.Processor:
-				emit_signal("object_dropped", collision_combine)
-				collision_combine = Globals.CombineType.NONE
+				emit_signal("object_dropped", execute_combine)
+				#combine_type = Globals.CombineType.NONE
 
 func spawn() -> void:
 	dragging = true
@@ -65,11 +67,13 @@ func get_combine() -> Globals.CombineType:
 
 func _on_area_entered(area: Area2D) -> void:
 	execute_collision = area.get_type()
-	if execute_collision <= Globals.ObjectType.Interactable && collision_combine == Globals.CombineType.NONE:
-		collision_combine = area.get_combine()
-		print(collision_combine)
+	if execute_collision == Globals.ObjectType.None:
+		print(execute_collision)
+	if (execute_collision == Globals.ObjectType.Interactable || execute_collision == Globals.ObjectType.Effect):
+		execute_combine = area.get_combine()
 
 func _on_area_exited(_area: Area2D) -> void:
+	print(execute_collision)
 	execute_collision = Globals.ObjectType.None
 
 func change_animation(recieved_type : Globals.CombineType) -> void:
