@@ -3,6 +3,7 @@ extends Node2D
 
 @export var type = Globals.ObjectType.None
 @export var combine_type = Globals.CombineType.NONE
+@export var prepared = false
 
 var starting_type
 
@@ -11,15 +12,15 @@ var current_animation_frame = 0
 var placeable = false
 var last_position = position
 
-signal object_dropped(type)
+signal object_dropped(type, prepared)
 
 var dragging = false
 var execute_collision = Globals.ObjectType.None
 var execute_combine : Globals.CombineType
+var execute_prepared : bool
 
 func _on_ready() -> void:
 	change_animation(combine_type)
-	#combine_type = combine_type
 	starting_type = type
 
 func _process(_delta: float) -> void:
@@ -49,10 +50,10 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			if execute_collision == Globals.ObjectType.Knife:
 				current_animation_frame = 1
 				type = Globals.ObjectType.Effect
+				prepared = true
 		else:
-			if execute_collision == Globals.ObjectType.Effect || execute_collision == Globals.ObjectType.Processor:
-				emit_signal("object_dropped", execute_combine)
-				#combine_type = Globals.CombineType.NONE
+			if (execute_collision == Globals.ObjectType.Effect || execute_collision == Globals.ObjectType.Processor):
+				emit_signal("object_dropped", execute_combine, execute_prepared)
 
 func spawn() -> void:
 	dragging = true
@@ -71,6 +72,7 @@ func _on_area_entered(area: Area2D) -> void:
 		print(execute_collision)
 	if (execute_collision == Globals.ObjectType.Interactable || execute_collision == Globals.ObjectType.Effect):
 		execute_combine = area.get_combine()
+		execute_prepared = area.prepared
 
 func _on_area_exited(_area: Area2D) -> void:
 	print(execute_collision)

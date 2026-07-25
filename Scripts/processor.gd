@@ -39,7 +39,7 @@ func _on_area_exited(area: Area2D) -> void:
 	area.object_dropped.disconnect(_add_to_process)
 
 
-func _add_to_process(_type) -> void:
+func _add_to_process(_type, _prepared) -> void:
 	if object != null:
 		object.current_animation_frame = 1
 		object.change_animation(current_object_combine_type)
@@ -52,7 +52,9 @@ func get_type() -> Globals.ObjectType:
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		if process_complete:
+			object.set_process(true)
 			object.spawn()
+			object.prepared = true
 			animated_sprite_2d.frame = 0
 			process_complete = false
 

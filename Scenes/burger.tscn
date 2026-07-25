@@ -92,7 +92,6 @@ offset_bottom = 47.0
 texture = ExtResource("5_w6wxl")
 expand_mode = 1
 script = ExtResource("4_6a7nn")
-type = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=1195421103]

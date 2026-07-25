@@ -6,15 +6,18 @@ var current_plate = {}
 @export var timer : Timer
 @onready var chef: AnimatedSprite2D = $"../Chef"
 
+var rng = RandomNumberGenerator.new()
+
 func _ready() -> void:
+	rng.randomize()
 	random_order()
 
 func random_order() -> void:
-	current_order.set("lettuce",1)
-	current_order.set("pickle",1)
+	current_order.set("lettuce", rng.randi_range(0,1))
+	current_order.set("pickle",rng.randi_range(0,1))
 	current_order.set("meat",1)
-	current_order.set("onion",1)
-	current_order.set("tomato",1)
+	current_order.set("onion",rng.randi_range(0,1))
+	current_order.set("tomato",rng.randi_range(0,1))
 	
 
 func check_order() -> bool:

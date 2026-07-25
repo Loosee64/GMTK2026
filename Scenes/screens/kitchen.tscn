@@ -186,6 +186,7 @@ shape = SubResource("RectangleShape2D_dtglo")
 position = Vector2(709, 437)
 type = 6
 combine_type = 0
+prepared = true
 
 [node name="GrillSubObject" parent="." unique_id=1742851292 instance=ExtResource("3_8gbba")]
 visible = false
