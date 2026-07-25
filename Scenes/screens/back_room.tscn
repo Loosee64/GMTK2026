@@ -35,3 +35,8 @@ sprite_frames = SubResource("SpriteFrames_u0ya7")
 [node name="TextBox" parent="." unique_id=1434168376 instance=ExtResource("4_42lqx")]
 dialogue_resource = ExtResource("5_1s4ov")
 start_from_title = "start"
+
+[node name="Timer" type="Timer" parent="." unique_id=878808328]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

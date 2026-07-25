@@ -25,3 +25,4 @@ signal calm_chef(strength)
 signal enter_back_room
 signal exit_back_room
 signal next_order
+signal reset_dialogue_timer

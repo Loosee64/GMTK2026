@@ -27,17 +27,20 @@ func _process(delta: float) -> void:
 		in_back_room = true
 		visible = false
 		Globals.enter_back_room.emit()
-	elif in_back_room:
+	
+	if in_back_room && aggression < AGGRESSION_LIMIT_1:
 		Globals.exit_back_room.emit()
 		visible = true
 		in_back_room = false
 
 func anger_chef(strength):
 	aggression += strength * aggression_modifier
+	print(aggression)
 	play(current_animation)
 
 func calm_chef(strength):
 	aggression -= strength
+	print(aggression)
 
 func get_aggression_factor() -> int:
 	if !in_back_room:

@@ -1,3 +1,16 @@
 ~ start
 Chef: kill yourself
+- Yes Chef!
+	Chef: Happy :D [do! Globals.calm_chef.emit(10)]
+- No Chef!
+	Chef: Mad >:( [do! Globals.mistake.emit(10)]
+Chef: Reset timer[do! Globals.reset_dialogue_timer.emit()]
+=> END
+
+~ test
+Chef: This is different so I'll be less mean
+- Yes Chef!
+	Chef: Don't fucking patronise me
+- No Chef!
+	Chef: Fuck you
 => END

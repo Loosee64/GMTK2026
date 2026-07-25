@@ -1,67 +1,44 @@
 [gd_scene format=3 uid="uid://jkrgjp663vuv"]
 
 [ext_resource type="Script" uid="uid://bjog6kos2fdae" path="res://Scenes/Dialogue/balloon.gd" id="1_36de5"]
+[ext_resource type="Texture2D" uid="uid://pwniie63ygwb" path="res://Assets/UI/option_box_type.tres" id="2_61ay4"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://butvem50xqlqe" path="res://Assets/UI/option_box_hover.tres" id="3_nk2a2"]
+[ext_resource type="Texture2D" uid="uid://3kx5rmhci53c" path="res://Assets/UI/text_box_type.tres" id="4_g0j0v"]
+[ext_resource type="FontFile" uid="uid://cpowgj4v0yjud" path="res://Assets/Fonts/Troubleside-Yq5W2.ttf" id="5_rjqpn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.329412, 0.329412, 0.329412, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bhhg"]
+texture = ExtResource("2_61ay4")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
-bg_color = Color(0.121569, 0.121569, 0.121569, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7nrpt"]
+texture = ExtResource("3_nk2a2")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.6, 0.6, 0.6, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ubit0"]
+texture = ExtResource("3_nk2a2")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkmqt"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kflof"]
+texture = ExtResource("2_61ay4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h64ni"]
+texture = ExtResource("4_g0j0v")
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
+default_font = ExtResource("5_rjqpn")
 default_font_size = 20
-Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
-Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
-Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
-Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+Button/constants/outline_size = 2
+Button/styles/disabled = SubResource("StyleBoxTexture_8bhhg")
+Button/styles/focus = SubResource("StyleBoxTexture_7nrpt")
+Button/styles/hover = SubResource("StyleBoxTexture_ubit0")
+Button/styles/normal = SubResource("StyleBoxTexture_kflof")
 MarginContainer/constants/margin_bottom = 15
 MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_h64ni")
+RichTextLabel/constants/outline_size = 2
+
+[sub_resource type="Theme" id="Theme_83u76"]
 
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
@@ -102,6 +79,7 @@ _data = {
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=1434168376]
 layer = 100
 script = ExtResource("1_36de5")
+will_block_other_input = false
 
 [node name="Balloon" type="Control" parent="." unique_id=359403728]
 unique_name_in_owner = true
@@ -111,6 +89,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = SubResource("Theme_qq3yp")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1011109179]
@@ -156,14 +135,15 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=914537232]
 layout_mode = 2
+theme = SubResource("Theme_83u76")
 text = "Response example"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon" unique_id=1624289611]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 582.0
-offset_right = 937.0
-offset_bottom = 735.0
+offset_left = 187.0
+offset_top = 586.0
+offset_right = 1061.0
+offset_bottom = 739.0
 size_flags_horizontal = 3
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/VBoxContainer" unique_id=507199029]
@@ -176,9 +156,16 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/VBoxContainer" unique_id=1225160028 instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="Balloon" unique_id=1225160028 instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+offset_left = 187.0
+offset_top = 633.0
+offset_right = 1061.0
+offset_bottom = 754.0
+grow_horizontal = 1
 size_flags_vertical = 3
 text = "Dialogue..."
 
@@ -190,6 +177,7 @@ offset_top = 725.0
 offset_right = 961.0
 offset_bottom = 735.0
 size_flags_vertical = 8
+mouse_filter = 1
 
 [node name="Progress" type="Polygon2D" parent="Balloon/Control" unique_id=821575988]
 unique_name_in_owner = true
