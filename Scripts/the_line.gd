@@ -11,6 +11,7 @@ var rng = RandomNumberGenerator.new()
 func _ready() -> void:
 	rng.randomize()
 	random_order()
+	Globals.next_order.connect(random_order)
 
 func random_order() -> void:
 	current_order.set("lettuce", rng.randi_range(0,1))
@@ -28,6 +29,7 @@ func check_order() -> bool:
 func process_order() -> void:
 	if check_order():
 		print("yes")
+		Globals.next_order.emit()
 		timer.start(timer.time_left + 10 - chef.get_aggression_factor())
 	else:
 		print("no")

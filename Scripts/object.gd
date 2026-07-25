@@ -6,6 +6,7 @@ extends Node2D
 @export var prepared = false
 
 var starting_type
+var signal_sent = false
 
 var current_animation_frame = 0
 
@@ -34,18 +35,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event.is_action_pressed("click"):
 		dragging = true
 	elif event.is_action_released("click"):
-		if dragging:
-			if type == Globals.ObjectType.Knife || type == Globals.ObjectType.Effect:
-				visible = false
-				set_process(false)
-				position.x = -1000
-				current_animation_frame = 0
-				if type != Globals.ObjectType.Knife && execute_collision != Globals.ObjectType.Plate:
-					type = starting_type
-					Globals.mistake.emit(5)
-			elif !placeable:
-				position = last_position
-		dragging = false
 		if type == Globals.ObjectType.Interactable:
 			if execute_collision == Globals.ObjectType.Knife:
 				current_animation_frame = 1
@@ -54,6 +43,21 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 		else:
 			if (execute_collision == Globals.ObjectType.Effect || execute_collision == Globals.ObjectType.Processor):
 				emit_signal("object_dropped", execute_combine, execute_prepared)
+				signal_sent = true
+		if dragging:
+			if type == Globals.ObjectType.Knife || type == Globals.ObjectType.Effect:
+				visible = false
+				set_process(false)
+				position.x = -1000
+				current_animation_frame = 0
+				if type != Globals.ObjectType.Knife && execute_collision != Globals.ObjectType.Plate:
+					type = starting_type
+					if !signal_sent:
+						Globals.mistake.emit(5)
+			elif !placeable:
+				position = last_position
+		dragging = false
+		signal_sent = false
 
 func spawn() -> void:
 	dragging = true
@@ -75,7 +79,6 @@ func _on_area_entered(area: Area2D) -> void:
 		execute_prepared = area.prepared
 
 func _on_area_exited(_area: Area2D) -> void:
-	print(execute_collision)
 	execute_collision = Globals.ObjectType.None
 
 func change_animation(recieved_type : Globals.CombineType) -> void:

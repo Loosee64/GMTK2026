@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://barf03ax5j35j" path="res://Assets/Back Room/murder room.png" id="1_0227n"]
 [ext_resource type="Script" uid="uid://c8jqiviam6yph" path="res://Scripts/back_room.gd" id="1_ncpjq"]
 [ext_resource type="Texture2D" uid="uid://bgo18oj6065vp" path="res://Assets/Chef/chef_phase_3.png" id="3_ncpjq"]
+[ext_resource type="PackedScene" uid="uid://jkrgjp663vuv" path="res://Scenes/Dialogue/balloon.tscn" id="4_42lqx"]
+[ext_resource type="Resource" uid="uid://r4gin4xon1qi" path="res://Dialogue/test.dialogue" id="5_1s4ov"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 animations = [{
@@ -29,3 +31,7 @@ visible = false
 position = Vector2(466, 374)
 scale = Vector2(0.72870374, 0.7287037)
 sprite_frames = SubResource("SpriteFrames_u0ya7")
+
+[node name="TextBox" parent="." unique_id=1434168376 instance=ExtResource("4_42lqx")]
+dialogue_resource = ExtResource("5_1s4ov")
+start_from_title = "start"

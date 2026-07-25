@@ -9,6 +9,23 @@ extends Node2D
 
 var current = {}
 
+func _ready() -> void:
+	Globals.next_order.connect(_new_burger)
+	_new_burger()
+
+func _new_burger():
+	current.set("lettuce", 0)
+	current.set("pickle",0)
+	current.set("meat",0)
+	current.set("onion",0)
+	current.set("tomato",0)
+	
+	lettuce.visible = false
+	meat.visible = false
+	pickle.visible = false
+	onion.visible = false
+	tomato.visible = false
+
 func _on_object_object_dropped(type: Globals.CombineType, prepared) -> void:
 	if prepared:
 		match type:

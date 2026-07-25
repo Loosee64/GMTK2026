@@ -16,7 +16,11 @@
 [node name="Object" unique_id=1751848827 instance=ExtResource("1_ys118")]
 combine_type = 1
 
+[node name="CollisionShape2D" parent="." index="0" unique_id=1715628032]
+position = Vector2(-6, -34)
+
 [node name="Node" type="Node2D" parent="." index="1" unique_id=695044495]
+scale = Vector2(2, 2)
 script = ExtResource("2_2pc64")
 
 [node name="Bottom" type="TextureRect" parent="Node" index="0" unique_id=600788024]

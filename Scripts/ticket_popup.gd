@@ -26,11 +26,25 @@ func popup():
 	if current_order != {}:
 		if current_order.get("lettuce") == 1:
 			lettuce.visible = true
+		else:
+			lettuce.visible = false
+		
 		if current_order.get("meat") == 1:
 			meat.visible = true
+		else:
+			meat.visible = false
+		
 		if current_order.get("tomato") == 1:
 			tomato.visible = true
+		else:
+			tomato.visible = false
+		
 		if current_order.get("onion") == 1:
 			onion.visible = true
+		else:
+			onion.visible = false
+		
 		if current_order.get("pickle") == 1:
 			pickle.visible = true
+		else:
+			pickle.visible = false
