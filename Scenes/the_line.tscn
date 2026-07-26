@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d1dnmfhm5dhtt" path="res://Scenes/placeable_space.tscn" id="2_trci8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
-size = Vector2(523, 58)
+size = Vector2(305, 58)
 
 [node name="Node2D" type="Node2D" unique_id=1341072480]
 script = ExtResource("1_i5txc")
@@ -12,7 +12,7 @@ script = ExtResource("1_i5txc")
 [node name="PlaceableSpace" parent="." unique_id=576513465 instance=ExtResource("2_trci8")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceableSpace" unique_id=620011903]
-position = Vector2(251.5, 19)
+position = Vector2(142.5, 19)
 shape = SubResource("RectangleShape2D_u0ya7")
 
 [connection signal="area_entered" from="PlaceableSpace" to="." method="_on_placeable_space_area_entered"]

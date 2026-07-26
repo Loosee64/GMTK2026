@@ -1,22 +1,54 @@
 [gd_scene format=3 uid="uid://cka2ix7kuowjd"]
 
 [ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="1_pmsje"]
-[ext_resource type="Texture2D" uid="uid://scig185teo1d" path="res://Assets/templettuce.png" id="2_73reo"]
+[ext_resource type="Texture2D" uid="uid://dafa6ofh2h2p0" path="res://Assets/Burger/BunWhole.png" id="3_pcso2"]
 [ext_resource type="Texture2D" uid="uid://w8i2kuui580e" path="res://Assets/Burger/LettuceCut.png" id="3_x0tmm"]
-[ext_resource type="Texture2D" uid="uid://bvqup43jt4ytc" path="res://Assets/burgertemp.jpg" id="4_k246y"]
+[ext_resource type="Texture2D" uid="uid://ck6yqkusyuhc" path="res://Assets/Burger/LettuceWhole.png" id="4_ir1gf"]
+[ext_resource type="Texture2D" uid="uid://d08av7g5vm7cw" path="res://Assets/Burger/Chips.png" id="4_pcso2"]
 [ext_resource type="Texture2D" uid="uid://cxcv6c8k6drjd" path="res://Assets/Burger/PattyCooked.png" id="5_1erql"]
 [ext_resource type="Texture2D" uid="uid://bvebqemys77fb" path="res://Assets/Burger/PickleWhole.png" id="6_exs7o"]
-[ext_resource type="Texture2D" uid="uid://8h6wnoiay3pq" path="res://Assets/oniontemp.jpg" id="6_kjehn"]
+[ext_resource type="Texture2D" uid="uid://cxbvaswl463ht" path="res://Assets/Burger/PattyRaw.png" id="6_hkw6d"]
 [ext_resource type="Texture2D" uid="uid://ngekbb1ds7sp" path="res://Assets/Burger/OnionCut.png" id="7_da3o3"]
 [ext_resource type="Texture2D" uid="uid://dkbl3jitwwt1b" path="res://Assets/Burger/PickleCut.png" id="7_e4y7p"]
+[ext_resource type="Texture2D" uid="uid://c7bfbugifeqfh" path="res://Assets/Burger/OnionWhole.png" id="8_pcso2"]
 [ext_resource type="Texture2D" uid="uid://cuj15haf1dg3j" path="res://Assets/Burger/TomatoWhole.png" id="10_ir1gf"]
 [ext_resource type="Texture2D" uid="uid://dtn4f484oamj3" path="res://Assets/Burger/TomatoCut.png" id="11_pcso2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir1gf"]
+atlas = ExtResource("3_pcso2")
+region = Rect2(0, 0, 1024, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcso2"]
+atlas = ExtResource("3_pcso2")
+region = Rect2(1024, 0, 1024, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_73reo")
+"texture": SubResource("AtlasTexture_ir1gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcso2")
+}],
+"loop": 1,
+"name": &"bun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pcso2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pcso2")
+}],
+"loop": 1,
+"name": &"fries",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ir1gf")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_x0tmm")
@@ -27,7 +59,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_k246y")
+"texture": ExtResource("6_hkw6d")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_1erql")
@@ -38,7 +70,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_kjehn")
+"texture": ExtResource("8_pcso2")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_da3o3")
@@ -72,10 +104,10 @@ animations = [{
 
 [node name="Object" unique_id=1751848827 instance=ExtResource("1_pmsje")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1576751883]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=1576751883]
 position = Vector2(-2.999999, -4.500002)
 scale = Vector2(0.26666665, 0.28055555)
 sprite_frames = SubResource("SpriteFrames_u0ya7")
-animation = &"onion"
+animation = &"tomato"
 
 [connection signal="ready" from="." to="." method="_on_ready"]

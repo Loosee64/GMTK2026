@@ -26,7 +26,11 @@ texture = ExtResource("4_g0j0v")
 [sub_resource type="Theme" id="Theme_qq3yp"]
 default_font = ExtResource("5_rjqpn")
 default_font_size = 20
-Button/constants/outline_size = 2
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 4
 Button/styles/disabled = SubResource("StyleBoxTexture_8bhhg")
 Button/styles/focus = SubResource("StyleBoxTexture_7nrpt")
 Button/styles/hover = SubResource("StyleBoxTexture_ubit0")
@@ -36,7 +40,9 @@ MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_h64ni")
-RichTextLabel/constants/outline_size = 2
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
+RichTextLabel/constants/outline_size = 4
 
 [sub_resource type="Theme" id="Theme_83u76"]
 

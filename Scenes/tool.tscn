@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cr0ndea6x3djc"]
 
 [ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="1_fqtr4"]
-[ext_resource type="Texture2D" uid="uid://b1qo16vxwkpob" path="res://Assets/knifetemp.jpg" id="2_fqtr4"]
+[ext_resource type="Texture2D" uid="uid://di77mge8cnf30" path="res://Assets/Kitchen/knife.png" id="2_fqtr4"]
+[ext_resource type="AudioStream" uid="uid://r6mii1dl63nx" path="res://Assets/Audio/SFX/chop.mp3" id="3_vue5m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 animations = [{
@@ -14,11 +15,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(185, 115)
+
 [node name="Object" unique_id=1751848827 instance=ExtResource("1_fqtr4")]
 type = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1707606779]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=1707606779]
 z_index = 1
 position = Vector2(-0.49999905, -2.9999995)
 scale = Vector2(0.2751678, 0.2281879)
 sprite_frames = SubResource("SpriteFrames_u0ya7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=1393760249]
+position = Vector2(-16.5, -27.5)
+shape = SubResource("RectangleShape2D_u0ya7")
+
+[node name="Drop" parent="." index="3" unique_id=648267371]
+stream = ExtResource("3_vue5m")

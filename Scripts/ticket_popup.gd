@@ -8,6 +8,7 @@ var line_ref
 @onready var tomato: TextureRect = $Panel/TextureRect/Node/Tomato
 @onready var onion: TextureRect = $Panel/TextureRect/Node/Onion
 @onready var pickle: TextureRect = $Panel/TextureRect/Node/Pickle
+@onready var fries: TextureRect = $Panel/TextureRect/Node/Fries
 
 func _ready() -> void:
 	var all_children = get_parent().get_children()
@@ -48,3 +49,8 @@ func popup():
 			pickle.visible = true
 		else:
 			pickle.visible = false
+		
+		if current_order.get("fries") == 1:
+			fries.visible = true
+		else:
+			fries.visible = false

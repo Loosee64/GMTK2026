@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://dhsxcjdvvedqo"]
+
+[ext_resource type="Texture2D" uid="uid://cdldkuo2wiw51" path="res://Assets/Screens/title.png" id="1_dgpud"]
+[ext_resource type="Script" uid="uid://bfhovbel5jo2m" path="res://Scenes/screens/title.gd" id="1_kjpmo"]
+[ext_resource type="Texture2D" uid="uid://cwjidc7y1ypiy" path="res://Assets/UI/logo.png" id="2_8dwy8"]
+[ext_resource type="Texture2D" uid="uid://c3awbyiur2gwh" path="res://Assets/UI/button_neutral.tres" id="3_lslqy"]
+[ext_resource type="FontFile" uid="uid://cpowgj4v0yjud" path="res://Assets/Fonts/Troubleside-Yq5W2.ttf" id="4_kjpmo"]
+[ext_resource type="Texture2D" uid="uid://c7ho3s7dn68lq" path="res://Assets/UI/button_click.tres" id="4_lslqy"]
+[ext_resource type="Texture2D" uid="uid://c3ja0hu1vhg3u" path="res://Assets/UI/button_hover.tres" id="5_kjpmo"]
+
+[sub_resource type="Theme" id="Theme_wt34f"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/constants/outline_size = 20
+Label/font_sizes/font_size = 200
+Label/fonts/font = ExtResource("4_kjpmo")
+
+[node name="Node2D" type="Node2D" unique_id=107501650]
+script = ExtResource("1_kjpmo")
+
+[node name="Background" type="TextureRect" parent="." unique_id=655285915]
+offset_right = 1024.0
+offset_bottom = 768.0
+texture = ExtResource("1_dgpud")
+expand_mode = 1
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1405083645]
+offset_left = 425.0
+offset_top = -43.0
+offset_right = 973.0
+offset_bottom = 400.0
+texture = ExtResource("2_8dwy8")
+expand_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=771664232]
+custom_minimum_size = Vector2(0, 100)
+custom_maximum_size = Vector2(-1, 100)
+propagate_maximum_size = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 640.0
+offset_top = 349.00003
+offset_right = 1840.0
+offset_bottom = 449.00003
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.185, 0.185)
+
+[node name="Buttons" type="VBoxContainer" parent="PanelContainer" unique_id=1489026535]
+custom_maximum_size = Vector2(100, 150)
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+offset_transform_pivot = Vector2(10, 0)
+offset_transform_visual_only = false
+theme_override_constants/separation = 100
+
+[node name="Play" type="TextureButton" parent="PanelContainer/Buttons" unique_id=866000868]
+layout_mode = 2
+texture_normal = ExtResource("3_lslqy")
+texture_pressed = ExtResource("4_lslqy")
+texture_hover = ExtResource("5_kjpmo")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PanelContainer/Buttons/Play" unique_id=67214690]
+layout_mode = 0
+offset_right = 1191.0447
+offset_bottom = 589.74365
+theme = SubResource("Theme_wt34f")
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="PanelContainer/Buttons" unique_id=1681605884]
+layout_mode = 2
+texture_normal = ExtResource("3_lslqy")
+texture_pressed = ExtResource("4_lslqy")
+texture_hover = ExtResource("5_kjpmo")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PanelContainer/Buttons/Settings" unique_id=1510980920]
+layout_mode = 0
+offset_right = 1191.0447
+offset_bottom = 589.74365
+theme = SubResource("Theme_wt34f")
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="PanelContainer/Buttons" unique_id=1919553206]
+layout_mode = 2
+texture_normal = ExtResource("3_lslqy")
+texture_pressed = ExtResource("4_lslqy")
+texture_hover = ExtResource("5_kjpmo")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PanelContainer/Buttons/Quit" unique_id=186584348]
+layout_mode = 0
+offset_right = 1191.0447
+offset_bottom = 589.74365
+theme = SubResource("Theme_wt34f")
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PanelContainer/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer/Buttons/Quit" to="." method="_on_quit_pressed"]

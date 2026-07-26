@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://28eshfx2lnjx"]
+
+[ext_resource type="Texture2D" uid="uid://dfdlq56o1eutp" path="res://Assets/Screens/win.png" id="1_cm1ee"]
+[ext_resource type="Script" uid="uid://bxtur50tqmcgl" path="res://Scenes/screens/shift_intermission.gd" id="1_jo0td"]
+[ext_resource type="Texture2D" uid="uid://c3awbyiur2gwh" path="res://Assets/UI/button_neutral.tres" id="2_jo0td"]
+[ext_resource type="Texture2D" uid="uid://c7ho3s7dn68lq" path="res://Assets/UI/button_click.tres" id="3_twi3v"]
+[ext_resource type="Texture2D" uid="uid://c3ja0hu1vhg3u" path="res://Assets/UI/button_hover.tres" id="4_5af5e"]
+[ext_resource type="Theme" uid="uid://h13e1vgbu61g" path="res://Assets/UI/text_theme.tres" id="5_pixav"]
+[ext_resource type="AudioStream" uid="uid://cb51nbkx38l34" path="res://Assets/Audio/Music/winSting.mp3" id="7_twi3v"]
+
+[node name="Node2D" type="Node2D" unique_id=605568157]
+script = ExtResource("1_jo0td")
+
+[node name="Background" type="TextureRect" parent="." unique_id=103669489]
+offset_right = 1024.0
+offset_bottom = 768.0
+texture = ExtResource("1_cm1ee")
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=39359630]
+propagate_maximum_size = false
+offset_left = 398.0
+offset_top = 564.0
+offset_right = 1598.0
+offset_bottom = 1167.0
+scale = Vector2(0.225, 0.225)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=610682636]
+propagate_maximum_size = false
+layout_mode = 2
+theme_override_constants/separation = 180
+
+[node name="NextDay" type="TextureButton" parent="PanelContainer/HBoxContainer" unique_id=2109143215]
+layout_mode = 2
+texture_normal = ExtResource("2_jo0td")
+texture_pressed = ExtResource("3_twi3v")
+texture_hover = ExtResource("4_5af5e")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/NextDay" unique_id=1096480495]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1195.5557
+offset_bottom = 591.1111
+theme = ExtResource("5_pixav")
+text = "Next Day"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenu" type="TextureButton" parent="PanelContainer/HBoxContainer" unique_id=1531373218]
+layout_mode = 2
+texture_normal = ExtResource("2_jo0td")
+texture_pressed = ExtResource("3_twi3v")
+texture_hover = ExtResource("4_5af5e")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/MainMenu" unique_id=873574056]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1195.5557
+offset_bottom = 591.1111
+theme = ExtResource("5_pixav")
+theme_override_font_sizes/font_size = 180
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinSting" type="AudioStreamPlayer" parent="." unique_id=1177909823]
+stream = ExtResource("7_twi3v")
+volume_db = -10.0
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/NextDay" to="." method="_on_next_day_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8h6wnoiay3pq"
-path="res://.godot/imported/oniontemp.jpg-b3bc5558141df319e9df6a6a4c3e5c26.ctex"
+uid="uid://dsde1ooebboe7"
+path="res://.godot/imported/misc_2.png-44d39b548ffe64a9fcbac1bd406892fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/oniontemp.jpg"
-dest_files=["res://.godot/imported/oniontemp.jpg-b3bc5558141df319e9df6a6a4c3e5c26.ctex"]
+source_file="res://Assets/Kitchen/misc_2.png"
+dest_files=["res://.godot/imported/misc_2.png-44d39b548ffe64a9fcbac1bd406892fa.ctex"]
 
 [params]
 

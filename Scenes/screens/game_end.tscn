@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bksm10pwh4qq5"]
+
+[ext_resource type="Texture2D" uid="uid://bjl53kommt0ji" path="res://Assets/Screens/night_closing.png" id="1_bvlfx"]
+[ext_resource type="Script" uid="uid://cyp3clwgi2yb" path="res://Scenes/screens/game_end.gd" id="1_klgws"]
+[ext_resource type="Texture2D" uid="uid://c3awbyiur2gwh" path="res://Assets/UI/button_neutral.tres" id="2_klgws"]
+[ext_resource type="Texture2D" uid="uid://c7ho3s7dn68lq" path="res://Assets/UI/button_click.tres" id="3_3mfr3"]
+[ext_resource type="Texture2D" uid="uid://c3ja0hu1vhg3u" path="res://Assets/UI/button_hover.tres" id="4_evsbq"]
+[ext_resource type="Theme" uid="uid://h13e1vgbu61g" path="res://Assets/UI/text_theme.tres" id="5_ib4kb"]
+
+[node name="Node2D" type="Node2D" unique_id=1372113717]
+script = ExtResource("1_klgws")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2056049955]
+offset_right = 1024.0
+offset_bottom = 768.0
+texture = ExtResource("1_bvlfx")
+expand_mode = 1
+
+[node name="MainMenu" type="TextureButton" parent="." unique_id=891718465]
+offset_left = 585.0
+offset_top = 554.0
+offset_right = 869.0
+offset_bottom = 685.0
+texture_normal = ExtResource("2_klgws")
+texture_pressed = ExtResource("3_3mfr3")
+texture_hover = ExtResource("4_evsbq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MainMenu" unique_id=641057483]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 282.0
+offset_bottom = 124.0
+theme = ExtResource("5_ib4kb")
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

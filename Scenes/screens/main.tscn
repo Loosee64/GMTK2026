@@ -3,27 +3,72 @@
 [ext_resource type="Script" uid="uid://d3cku5vu4xfws" path="res://Scripts/main.gd" id="1_0mp8l"]
 [ext_resource type="PackedScene" uid="uid://di7lv4icyqso4" path="res://Scenes/screens/kitchen.tscn" id="1_j1mco"]
 [ext_resource type="PackedScene" uid="uid://d1jsebflis8yd" path="res://Scenes/screens/back_room.tscn" id="2_8j02x"]
+[ext_resource type="PackedScene" uid="uid://pl3dlk3f60o7" path="res://Scenes/screens/game_over.tscn" id="3_2ox34"]
+[ext_resource type="Texture2D" uid="uid://lnhjstab5tpy" path="res://Assets/UI/to_back_room.tres" id="3_br43e"]
+[ext_resource type="Texture2D" uid="uid://d4ly6qfupvsjc" path="res://Assets/UI/to_kitchen.tres" id="5_ukd4y"]
+[ext_resource type="PackedScene" uid="uid://dhsxcjdvvedqo" path="res://Scenes/screens/title.tscn" id="6_ukd4y"]
+[ext_resource type="PackedScene" uid="uid://28eshfx2lnjx" path="res://Scenes/screens/shift_intermission.tscn" id="8_foflc"]
+[ext_resource type="PackedScene" uid="uid://bksm10pwh4qq5" path="res://Scenes/screens/game_end.tscn" id="9_cdyed"]
+[ext_resource type="AudioStream" uid="uid://dpakw306tgvlm" path="res://Assets/Audio/Music/menuSong.mp3" id="10_tlggm"]
+[ext_resource type="AudioStream" uid="uid://glay31dk1roe" path="res://Assets/Audio/Music/niceSong.mp3" id="11_rwrba"]
+[ext_resource type="AudioStream" uid="uid://3rifho2u666c" path="res://Assets/Audio/Music/ehhSong.mp3" id="12_1ihna"]
+[ext_resource type="AudioStream" uid="uid://cclngtsffxqin" path="res://Assets/Audio/Music/evilSong.mp3" id="13_jsh1t"]
 
 [node name="Main" type="Node2D" unique_id=1708709195]
 script = ExtResource("1_0mp8l")
+max_shifts = 3
+
+[node name="Title" parent="." unique_id=107501650 instance=ExtResource("6_ukd4y")]
+
+[node name="GameOver" parent="." unique_id=112776382 instance=ExtResource("3_2ox34")]
+visible = false
 
 [node name="Kitchen" parent="." unique_id=669976395 instance=ExtResource("1_j1mco")]
+visible = false
 position = Vector2(1, -1)
 
-[node name="SwitchToBack" type="Button" parent="Kitchen" unique_id=1046025011]
+[node name="SwitchToBack" type="TextureButton" parent="Kitchen" unique_id=1015298914]
 offset_right = 108.0
 offset_bottom = 58.0
-text = "To Back"
+texture_normal = ExtResource("3_br43e")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="BackRoom" parent="." unique_id=1090493573 instance=ExtResource("2_8j02x")]
 visible = false
 
-[node name="SwitchToKitchen" type="Button" parent="BackRoom" unique_id=1242454428]
+[node name="SwitchToKitchen" type="TextureButton" parent="BackRoom" unique_id=260610921]
 offset_left = 915.0
 offset_top = 1.0
 offset_right = 1023.0
 offset_bottom = 59.0
-text = "To Kitchen"
+texture_normal = ExtResource("5_ukd4y")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ShiftIntermission" parent="." unique_id=605568157 instance=ExtResource("8_foflc")]
+visible = false
+
+[node name="GameEnd" parent="." unique_id=1372113717 instance=ExtResource("9_cdyed")]
+visible = false
+
+[node name="TitleScreen" type="AudioStreamPlayer2D" parent="." unique_id=646777324]
+stream = ExtResource("10_tlggm")
+volume_db = -5.045
+autoplay = true
+parameters/looping = true
+
+[node name="MainNormal" type="AudioStreamPlayer2D" parent="." unique_id=2141261295]
+stream = ExtResource("11_rwrba")
+bus = &"Music"
+
+[node name="MainEhhh" type="AudioStreamPlayer2D" parent="." unique_id=830268091]
+stream = ExtResource("12_1ihna")
+bus = &"Music"
+
+[node name="MainEvil" type="AudioStreamPlayer2D" parent="." unique_id=304655474]
+stream = ExtResource("13_jsh1t")
+bus = &"Music"
 
 [connection signal="pressed" from="Kitchen/SwitchToBack" to="." method="_on_switch_to_back_pressed"]
 [connection signal="pressed" from="BackRoom/SwitchToKitchen" to="." method="_on_switch_to_kitchen_pressed"]

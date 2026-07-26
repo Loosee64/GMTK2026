@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvqup43jt4ytc"
-path="res://.godot/imported/burgertemp.jpg-8c5c4b81b50c3dd77321177e5a50be65.ctex"
+uid="uid://cvgvtp5x4rlpj"
+path="res://.godot/imported/counter_stove.png-fc80897905e1d4b9b790ec1090c52482.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/burgertemp.jpg"
-dest_files=["res://.godot/imported/burgertemp.jpg-8c5c4b81b50c3dd77321177e5a50be65.ctex"]
+source_file="res://Assets/Kitchen/counter_stove.png"
+dest_files=["res://.godot/imported/counter_stove.png-fc80897905e1d4b9b790ec1090c52482.ctex"]
 
 [params]
 

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://pl3dlk3f60o7"]
+
+[ext_resource type="Texture2D" uid="uid://i6ifjsgct0xk" path="res://Assets/Screens/game_over.png" id="1_n87vq"]
+[ext_resource type="Script" uid="uid://gbkjosja4bg1" path="res://Scenes/screens/game_over.gd" id="1_y5kqv"]
+[ext_resource type="AudioStream" uid="uid://6e1ulwrikm14" path="res://Assets/Audio/Music/loseSting.mp3" id="3_id6ty"]
+
+[node name="Node2D" type="Node2D" unique_id=112776382]
+script = ExtResource("1_y5kqv")
+
+[node name="Timer" type="Timer" parent="." unique_id=348801109]
+wait_time = 20.0
+one_shot = true
+
+[node name="Control" type="Control" parent="." unique_id=79029243]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1987134914]
+layout_mode = 1
+offset_right = 1024.0
+offset_bottom = 768.0
+texture = ExtResource("1_n87vq")
+expand_mode = 5
+
+[node name="GameOverSting" type="AudioStreamPlayer" parent="." unique_id=1355410264]
+stream = ExtResource("3_id6ty")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

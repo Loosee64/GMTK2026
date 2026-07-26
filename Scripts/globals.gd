@@ -8,6 +8,7 @@ enum CombineType{
 	PICKLE,
 	ONION,
 	TOMATO,
+	FRIES
 }
 
 enum ObjectType {
@@ -26,3 +27,9 @@ signal enter_back_room
 signal exit_back_room
 signal next_order
 signal reset_dialogue_timer
+signal player_back_room(enter)
+
+signal scene_transition(next)
+signal shift_end
+signal change_music(variant)
+signal muffle(enabled)

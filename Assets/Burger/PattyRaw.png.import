@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc7s7fax57jhj"
-path="res://.godot/imported/misc_assets.png-83f2f3cb6615b9eea551bb19c93cccb3.ctex"
+uid="uid://cxbvaswl463ht"
+path="res://.godot/imported/PattyRaw.png-ff87b556688dfbabdf24cf2f37dcdb97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Kitchen/misc_assets.png"
-dest_files=["res://.godot/imported/misc_assets.png-83f2f3cb6615b9eea551bb19c93cccb3.ctex"]
+source_file="res://Assets/Burger/PattyRaw.png"
+dest_files=["res://.godot/imported/PattyRaw.png-ff87b556688dfbabdf24cf2f37dcdb97.ctex"]
 
 [params]
 

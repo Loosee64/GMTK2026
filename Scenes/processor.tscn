@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://cecirihw6ev2v" path="res://Scripts/processor.gd" id="1_t2ana"]
 [ext_resource type="Texture2D" uid="uid://3jqtjdccvbl" path="res://Assets/Kitchen/oven_frier.png" id="2_m4e83"]
 [ext_resource type="PackedScene" uid="uid://b4lvl1ql1q72y" path="res://Scenes/progress_bar.tscn" id="3_cdy3b"]
+[ext_resource type="Texture2D" uid="uid://cvgvtp5x4rlpj" path="res://Assets/Kitchen/counter_stove.png" id="3_md27u"]
+[ext_resource type="AudioStream" uid="uid://byegic5ug6kl2" path="res://Assets/Audio/SFX/ovenDing.mp3" id="5_5eims"]
+[ext_resource type="AudioStream" uid="uid://ddx1tooojpj8r" path="res://Assets/Audio/SFX/sizzle.mp3" id="6_1f6f8"]
+[ext_resource type="AudioStream" uid="uid://i1w3v8etlloa" path="res://Assets/Audio/SFX/stove_sizzle.mp3" id="6_lky5y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ee4r6"]
 atlas = ExtResource("2_m4e83")
@@ -19,6 +23,14 @@ region = Rect2(1754, 0, 1754, 1240)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fevyy"]
 atlas = ExtResource("2_m4e83")
 region = Rect2(0, 0, 1754, 1240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eims"]
+atlas = ExtResource("3_md27u")
+region = Rect2(1754, 1240, 1754, 1240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f6f8"]
+atlas = ExtResource("3_md27u")
+region = Rect2(0, 1240, 1754, 1240)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t2ana"]
 animations = [{
@@ -43,6 +55,17 @@ animations = [{
 "loop": 1,
 "name": &"grill",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eims")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f6f8")
+}],
+"loop": 1,
+"name": &"stove",
+"speed": 5.0
 }]
 
 [node name="Node2D" type="Area2D" unique_id=2113361991]
@@ -56,7 +79,7 @@ one_shot = true
 position = Vector2(-1, 0)
 scale = Vector2(0.174, 0.165)
 sprite_frames = SubResource("SpriteFrames_t2ana")
-animation = &"grill"
+animation = &"stove"
 
 [node name="ProgressBar" parent="." unique_id=2017483841 node_paths=PackedStringArray("timer") instance=ExtResource("3_cdy3b")]
 offset_left = -133.0
@@ -64,6 +87,17 @@ offset_top = -107.0
 offset_right = 106.0
 offset_bottom = -80.0
 timer = NodePath("../Timer")
+
+[node name="Ding" type="AudioStreamPlayer" parent="." unique_id=1463208809]
+stream = ExtResource("5_5eims")
+
+[node name="Sizzle" type="AudioStreamPlayer" parent="." unique_id=477213299]
+stream = ExtResource("6_lky5y")
+volume_db = -2.0
+
+[node name="Sizzle2" type="AudioStreamPlayer" parent="." unique_id=2117894424]
+stream = ExtResource("6_1f6f8")
+volume_db = -2.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

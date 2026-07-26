@@ -19,6 +19,8 @@ func random_order() -> void:
 	current_order.set("meat",1)
 	current_order.set("onion",rng.randi_range(0,1))
 	current_order.set("tomato",rng.randi_range(0,1))
+	current_order.set("bun",1)
+	current_order.set("fries",rng.randi_range(0,1))
 	
 
 func check_order() -> bool:
@@ -40,7 +42,7 @@ func get_current_order():
 
 func _on_placeable_space_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Burger"):
-		current_plate = area.get_child(1).get_current()
+		current_plate = area.get_child(0).get_current()
 		print(current_plate)
 
 

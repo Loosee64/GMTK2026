@@ -17,14 +17,17 @@ func _process(delta: float) -> void:
 	if aggression > AGGRESSION_LIMIT_1:
 		current_animation = "phase_2_wince"
 		aggression_factor = 5
+		Globals.change_music.emit("ehh")
 	else:
 		if current_animation == "phase_2_wince":
 			play("return_to_phase_1")
 		current_animation = "phase_1_wince"
 		aggression_factor = 0
+		Globals.change_music.emit("normal")
 	
 	if aggression > AGGRESSION_LIMIT_2:
 		in_back_room = true
+		Globals.change_music.emit("evil")
 		visible = false
 		Globals.enter_back_room.emit()
 	

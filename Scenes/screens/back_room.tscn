@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bgo18oj6065vp" path="res://Assets/Chef/chef_phase_3.png" id="3_ncpjq"]
 [ext_resource type="PackedScene" uid="uid://jkrgjp663vuv" path="res://Scenes/Dialogue/balloon.tscn" id="4_42lqx"]
 [ext_resource type="Resource" uid="uid://r4gin4xon1qi" path="res://Dialogue/test.dialogue" id="5_1s4ov"]
+[ext_resource type="AudioStream" uid="uid://bqmpvram7s3a7" path="res://Assets/Audio/SFX/fan.mp3" id="6_pk8fd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 animations = [{
@@ -38,5 +39,9 @@ start_from_title = "start"
 
 [node name="Timer" type="Timer" parent="." unique_id=878808328]
 one_shot = true
+
+[node name="Fan" type="AudioStreamPlayer2D" parent="." unique_id=1883701369]
+stream = ExtResource("6_pk8fd")
+volume_db = -17.851
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

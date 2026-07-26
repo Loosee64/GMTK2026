@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://d4ly6qfupvsjc"]
+
+[ext_resource type="Texture2D" uid="uid://dxf3e1lv3yh8" path="res://Assets/Kitchen/icons.png" id="1_ro63r"]
+
+[resource]
+atlas = ExtResource("1_ro63r")
+region = Rect2(151, 1227, 1331, 620)

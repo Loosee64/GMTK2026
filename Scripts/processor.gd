@@ -9,7 +9,11 @@ var scale_value = 1
 var scale_direction = 1
 var initial_scale
 var running = false
+var connected = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ding: AudioStreamPlayer = $Ding
+@onready var sizzle: AudioStreamPlayer = $Sizzle
+@onready var sizzle_2: AudioStreamPlayer = $Sizzle2
 
 func _ready() -> void:
 	animated_sprite_2d.animation = animation_name
@@ -31,12 +35,16 @@ func _process(_delta: float) -> void:
 		scale_value = initial_scale.x
 
 func _on_area_entered(area: Area2D) -> void:
-	area.object_dropped.connect(_add_to_process)
-	area.set_placeable(true)
-	current_object_combine_type = area.get_combine()
+	if area.get_combine() == object.get_combine():
+		connected = true
+		area.object_dropped.connect(_add_to_process)
+		area.set_placeable(true)
+		current_object_combine_type = area.get_combine()
 
 func _on_area_exited(area: Area2D) -> void:
-	area.object_dropped.disconnect(_add_to_process)
+	if connected:
+		area.object_dropped.disconnect(_add_to_process)
+		connected = false
 
 
 func _add_to_process(_type, _prepared) -> void:
@@ -45,6 +53,10 @@ func _add_to_process(_type, _prepared) -> void:
 		object.change_animation(current_object_combine_type)
 		timer.start()
 		running = true
+		if object.get_combine() == Globals.CombineType.MEAT:
+			sizzle.play()
+		elif object.get_combine() == Globals.CombineType.FRIES:
+			sizzle_2.play()
 
 func get_type() -> Globals.ObjectType:
 	return Globals.ObjectType.Processor
@@ -63,3 +75,8 @@ func _on_timer_timeout() -> void:
 	process_complete = true
 	running = false
 	timer.stop()
+	ding.play()
+	if object.get_combine() == Globals.CombineType.MEAT:
+			sizzle.stop()
+	elif object.get_combine() == Globals.CombineType.FRIES:
+			sizzle_2.stop()

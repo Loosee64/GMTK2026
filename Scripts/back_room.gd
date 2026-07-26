@@ -1,6 +1,7 @@
 extends Node2D
 @onready var chef_sprite: AnimatedSprite2D = $ChefSprite
 @onready var timer: Timer = $Timer
+@onready var fan: AudioStreamPlayer2D = $Fan
 
 var dialogue_path = "res://Dialogue/test.dialogue"
 var dialogue_resource
@@ -12,6 +13,7 @@ func _ready() -> void:
 	Globals.enter_back_room.connect(spawn_chef)
 	Globals.exit_back_room.connect(leave_chef)
 	Globals.reset_dialogue_timer.connect(reset_dialogue)
+	Globals.player_back_room.connect(entered_back_room)
 	dialogue_resource = load(dialogue_path)
 	current_dialogue = "start"
 
@@ -19,6 +21,12 @@ func _process(_delta: float) -> void:
 	if chef_sprite.visible && visible && !dialogue_running:
 		DialogueManager.show_dialogue_balloon(dialogue_resource, current_dialogue)
 		dialogue_running = true
+
+func entered_back_room(enter):
+	if enter:
+		fan.play()
+	else:
+		fan.stop()
 
 func spawn_chef():
 	chef_sprite.visible = true

@@ -2,27 +2,36 @@
 
 [ext_resource type="Texture2D" uid="uid://ck4q5aqbo2gpg" path="res://Assets/Kitchen/kitchen_background.png" id="1_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://c556trw15vef" path="res://Scenes/spawner.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://dua3pk4i4xq24" path="res://Scenes/screens/kitchen.gd" id="1_t8g3x"]
+[ext_resource type="Texture2D" uid="uid://mwptgxame3is" path="res://Assets/Kitchen/chopping board.tres" id="2_oiae6"]
 [ext_resource type="PackedScene" uid="uid://cka2ix7kuowjd" path="res://Scenes/interactable.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cr0ndea6x3djc" path="res://Scenes/tool.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b4v51y7ml8rlf" path="res://Scenes/burger.tscn" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://2t112rdmij24" path="res://Assets/Kitchen/knife_box.png" id="4_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://bxm3dns8hxs71" path="res://Assets/Kitchen/boxes2.tres" id="4_rom1a"]
+[ext_resource type="Texture2D" uid="uid://csuogofpfmk5x" path="res://Assets/Kitchen/Trash.tres" id="4_sh7q7"]
 [ext_resource type="PackedScene" uid="uid://bj74mok4kms3k" path="res://Scenes/processor.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://d1dnmfhm5dhtt" path="res://Scenes/placeable_space.tscn" id="6_21xkr"]
 [ext_resource type="Script" uid="uid://bfdevwsd8k7v2" path="res://Scripts/button.gd" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://csul7cyvtarnn" path="res://Scenes/the_line.tscn" id="8_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://ck6yqkusyuhc" path="res://Assets/Burger/LettuceWhole.png" id="9_wsu2k"]
-[ext_resource type="Texture2D" uid="uid://bvqup43jt4ytc" path="res://Assets/burgertemp.jpg" id="10_k12tt"]
 [ext_resource type="Texture2D" uid="uid://bvebqemys77fb" path="res://Assets/Burger/PickleWhole.png" id="11_h1bgf"]
-[ext_resource type="Texture2D" uid="uid://8h6wnoiay3pq" path="res://Assets/oniontemp.jpg" id="15_h1bgf"]
+[ext_resource type="AudioStream" uid="uid://0eyq4e436p2c" path="res://Assets/Audio/SFX/orderDing.mp3" id="13_ykkov"]
 [ext_resource type="Texture2D" uid="uid://cuj15haf1dg3j" path="res://Assets/Burger/TomatoWhole.png" id="16_b3802"]
 [ext_resource type="Texture2D" uid="uid://24qyi3kvpxkl" path="res://Assets/Chef/chef_phase_1.png" id="16_pvose"]
+[ext_resource type="Texture2D" uid="uid://cxbvaswl463ht" path="res://Assets/Burger/PattyRaw.png" id="16_sh7q7"]
 [ext_resource type="Texture2D" uid="uid://bkmr3jjmukkxb" path="res://Assets/Chef/chef_phase_2.png" id="17_tj5w6"]
 [ext_resource type="Texture2D" uid="uid://boopcakxh1mcv" path="res://Assets/Chef/chef_phase_2_mad.png" id="18_h6c0o"]
+[ext_resource type="Texture2D" uid="uid://c7bfbugifeqfh" path="res://Assets/Burger/OnionWhole.png" id="18_t8g3x"]
 [ext_resource type="Script" uid="uid://cjvmibdelmdq3" path="res://Scripts/chef_kitchen.gd" id="18_tj5w6"]
 [ext_resource type="PackedScene" uid="uid://b4lvl1ql1q72y" path="res://Scenes/progress_bar.tscn" id="20_a3tha"]
-[ext_resource type="Texture2D" uid="uid://dc7s7fax57jhj" path="res://Assets/Kitchen/misc_assets.png" id="21_gqt35"]
+[ext_resource type="Texture2D" uid="uid://wtiupnovd537" path="res://Assets/Burger/BunBottom.png" id="20_t8g3x"]
+[ext_resource type="Texture2D" uid="uid://dc7s7fax57jhj" path="res://Assets/Kitchen/ticket.png" id="21_gqt35"]
+[ext_resource type="Texture2D" uid="uid://vs31rf6uwjwv" path="res://Assets/Burger/BunTop.png" id="21_mh27c"]
 [ext_resource type="Script" uid="uid://cgfcbje1ufjvp" path="res://Scripts/ticket.gd" id="22_2wvr6"]
+[ext_resource type="Texture2D" uid="uid://d08av7g5vm7cw" path="res://Assets/Burger/Chips.png" id="22_mh27c"]
 [ext_resource type="PackedScene" uid="uid://bikpnlmq2ium5" path="res://Scenes/ticket_popup.tscn" id="23_g8wkf"]
+[ext_resource type="AudioStream" uid="uid://dbn0o0vhayehq" path="res://Assets/Audio/SFX/chatter.mp3" id="31_6vit7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtglo"]
 size = Vector2(121, 120)
@@ -31,10 +40,10 @@ size = Vector2(121, 120)
 size = Vector2(234.5, 185)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
-size = Vector2(330, 173)
+size = Vector2(594, 185.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyitb"]
-size = Vector2(247, 107)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogr1d"]
+size = Vector2(230, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8g7pp"]
 size = Vector2(252, 100)
@@ -42,11 +51,41 @@ size = Vector2(252, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwmae"]
 size = Vector2(89, 52)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4cug"]
+size = Vector2(151, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p210"]
+size = Vector2(143, 123.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxj8b"]
+size = Vector2(130, 111.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1g5x"]
+size = Vector2(113, 99.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1wof"]
+size = Vector2(141.25, 133.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyitb"]
+size = Vector2(144.5, 120.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmgwn"]
+size = Vector2(139, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03i70"]
+size = Vector2(146, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqrr1"]
+size = Vector2(115, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rr3w"]
+size = Vector2(143, 86)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wt34f"]
 size = Vector2(123, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yex4w"]
-size = Vector2(117, 95)
+size = Vector2(117, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ashne"]
 size = Vector2(117, 67)
@@ -56,6 +95,11 @@ size = Vector2(123, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkvl2"]
 size = Vector2(89, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xkks"]
+size = Vector2(22.54546, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlvh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
 animations = [{
@@ -155,11 +199,37 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D" unique_id=669976395]
+script = ExtResource("1_t8g3x")
+MAX_COUNTER = 1
 
 [node name="Background" type="TextureRect" parent="." unique_id=85015130]
 offset_right = 1025.0
-offset_bottom = 763.0
+offset_bottom = 768.0
 texture = ExtResource("1_fdnlq")
+expand_mode = 1
+
+[node name="Board" type="TextureRect" parent="." unique_id=1663774827]
+offset_left = 38.0
+offset_top = 535.0
+offset_right = 659.0
+offset_bottom = 733.0
+texture = ExtResource("2_oiae6")
+expand_mode = 1
+
+[node name="Boxes2" type="TextureRect" parent="." unique_id=2063828367]
+offset_left = 410.0
+offset_top = 429.0
+offset_right = 649.0
+offset_bottom = 527.0
+texture = ExtResource("4_rom1a")
+expand_mode = 1
+
+[node name="Trash" type="TextureRect" parent="." unique_id=1442056196]
+offset_left = 643.0
+offset_top = 366.0
+offset_right = 710.0
+offset_bottom = 429.0
+texture = ExtResource("4_sh7q7")
 expand_mode = 1
 
 [node name="Tool" parent="." unique_id=1751848827 instance=ExtResource("3_jjvhh")]
@@ -167,7 +237,7 @@ visible = false
 type = 3
 
 [node name="ToolSpawner" parent="." unique_id=1804186600 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(385, 391)
+position = Vector2(282, 402)
 object = NodePath("../Tool")
 
 [node name="TextureRect" type="TextureRect" parent="ToolSpawner" unique_id=1141765767]
@@ -179,20 +249,14 @@ texture = ExtResource("4_jkdf5")
 expand_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToolSpawner" unique_id=821616857]
-position = Vector2(61, 58)
+position = Vector2(55, 56)
 shape = SubResource("RectangleShape2D_dtglo")
 
-[node name="Burger" parent="." unique_id=1207560214 groups=["Burger"] instance=ExtResource("4_jjvhh")]
-position = Vector2(709, 437)
+[node name="Plate" parent="." unique_id=1207560214 groups=["Burger"] instance=ExtResource("4_jjvhh")]
+position = Vector2(318, 647)
 type = 6
 combine_type = 0
 prepared = true
-
-[node name="GrillSubObject" parent="." unique_id=1742851292 instance=ExtResource("3_8gbba")]
-visible = false
-position = Vector2(-413, 521)
-type = 1
-combine_type = 3
 
 [node name="Grill" parent="." unique_id=2113361991 node_paths=PackedStringArray("object") instance=ExtResource("5_kry3j")]
 position = Vector2(147, 333)
@@ -208,31 +272,38 @@ shape = SubResource("RectangleShape2D_arba8")
 position = Vector2(565, 560)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuildSpace" unique_id=922594813]
-position = Vector2(4, 86.5)
+position = Vector2(-213, 74)
 shape = SubResource("RectangleShape2D_u0ya7")
 
 [node name="CheckOrder" type="Button" parent="." unique_id=1864972611]
-offset_left = 176.0
-offset_top = 113.0
-offset_right = 269.0
-offset_bottom = 168.0
+offset_left = 575.0
+offset_top = 310.0
+offset_right = 680.0
+offset_bottom = 365.0
 text = "Check Order"
 script = ExtResource("7_344ge")
 
+[node name="Ding" type="AudioStreamPlayer" parent="CheckOrder" unique_id=1230841872]
+stream = ExtResource("13_ykkov")
+volume_db = -2.0
+
 [node name="TheLine" parent="." unique_id=1341072480 node_paths=PackedStringArray("timer") groups=["The_Line"] instance=ExtResource("8_ynf5e")]
-position = Vector2(370, 316)
+position = Vector2(690, 318)
 timer = NodePath("../EndTimer")
 
-[node name="Frier" parent="." unique_id=2115380139 instance=ExtResource("5_kry3j")]
-position = Vector2(1240, 701)
+[node name="Frier" parent="." unique_id=2115380139 node_paths=PackedStringArray("object") instance=ExtResource("5_kry3j")]
+position = Vector2(846, 665)
+object = NodePath("../FrierSubObject")
 animation_name = "frier"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Frier" unique_id=1681384128]
-position = Vector2(-18, 9)
-shape = SubResource("RectangleShape2D_cyitb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frier" unique_id=471559636]
+position = Vector2(-8, 12)
+shape = SubResource("RectangleShape2D_ogr1d")
 
-[node name="StoveTop" parent="." unique_id=1173172533 instance=ExtResource("5_kry3j")]
-position = Vector2(1229, 482)
+[node name="StoveTop" parent="." unique_id=1173172533 node_paths=PackedStringArray("object") instance=ExtResource("5_kry3j")]
+position = Vector2(842, 508)
+object = NodePath("../StoveSubObject")
+animation_name = "stove"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoveTop" unique_id=1921911534]
 position = Vector2(-2, 15)
@@ -253,11 +324,19 @@ position = Vector2(-189, 602)
 type = 1
 combine_type = 3
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientSpawns/IngredientBurger" unique_id=815588528]
+position = Vector2(-2, -20)
+shape = SubResource("RectangleShape2D_i4cug")
+
 [node name="IngredientPickle" parent="IngredientSpawns" unique_id=2097636159 instance=ExtResource("3_8gbba")]
 visible = false
-position = Vector2(-205, 409)
+position = Vector2(-149, 461)
 type = 2
 combine_type = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientSpawns/IngredientPickle" unique_id=171175154]
+position = Vector2(-1, -46.75)
+shape = SubResource("RectangleShape2D_5p210")
 
 [node name="IngredientLettuce" parent="IngredientSpawns" unique_id=2086578169 instance=ExtResource("3_8gbba")]
 visible = false
@@ -265,59 +344,123 @@ position = Vector2(-210, 242)
 type = 2
 combine_type = 2
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientSpawns/IngredientLettuce" unique_id=2096206848]
+position = Vector2(-3, -22)
+shape = SubResource("RectangleShape2D_uxj8b")
+
 [node name="IngredientOnion" parent="IngredientSpawns" unique_id=1453035447 instance=ExtResource("3_8gbba")]
 visible = false
 position = Vector2(-280, 365)
 type = 2
 combine_type = 5
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientSpawns/IngredientOnion" unique_id=1791117194]
+position = Vector2(-7, -14)
+shape = SubResource("RectangleShape2D_t1g5x")
+
 [node name="IngredientTomato" parent="IngredientSpawns" unique_id=1253830008 instance=ExtResource("3_8gbba")]
 visible = false
-position = Vector2(-230, 290)
+position = Vector2(-390, 697)
 type = 2
 combine_type = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientSpawns/IngredientTomato" unique_id=1384482422]
+position = Vector2(-3, -8)
+shape = SubResource("RectangleShape2D_t1wof")
+
+[node name="IngredientBun" parent="IngredientSpawns" unique_id=219781770 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-396, 585)
+type = 1
+combine_type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientSpawns/IngredientBun" unique_id=2083285906]
+position = Vector2(-1, -23)
+shape = SubResource("RectangleShape2D_cyitb")
+
+[node name="IngredientFries" parent="IngredientSpawns" unique_id=177557347 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-189, 602)
+type = 1
+combine_type = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IngredientSpawns/IngredientFries" unique_id=2012650706]
+position = Vector2(-3.5, -32)
+shape = SubResource("RectangleShape2D_gmgwn")
+
+[node name="GrillSubObject" parent="." unique_id=1742851292 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-406, 533)
+type = 1
+combine_type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrillSubObject" unique_id=173403460]
+position = Vector2(-2, -55)
+shape = SubResource("RectangleShape2D_03i70")
+
+[node name="FrierSubObject" parent="." unique_id=1130561236 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-826, 1042)
+type = 1
+combine_type = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrierSubObject" unique_id=444858756]
+position = Vector2(-8, -61)
+shape = SubResource("RectangleShape2D_fqrr1")
+
+[node name="StoveSubObject" parent="." unique_id=1123976796 instance=ExtResource("3_8gbba")]
+visible = false
+position = Vector2(-1239, 1563)
+type = 1
+combine_type = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoveSubObject" unique_id=1970550098]
+position = Vector2(-2, -23)
+shape = SubResource("RectangleShape2D_4rr3w")
 
 [node name="Spawners" type="Node2D" parent="." unique_id=113642356]
 
 [node name="LettuceSpawn" parent="Spawners" unique_id=1914355741 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(244, 481)
+position = Vector2(359, 273)
 object = NodePath("../../IngredientSpawns/IngredientLettuce")
+
+[node name="TextureRect" type="TextureRect" parent="Spawners/LettuceSpawn" unique_id=1320712038]
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 196.0
+offset_bottom = 187.0
+texture = ExtResource("9_wsu2k")
+expand_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/LettuceSpawn" unique_id=2075323476]
 position = Vector2(78.5, 44)
 shape = SubResource("RectangleShape2D_wt34f")
 
-[node name="TextureRect" type="TextureRect" parent="Spawners/LettuceSpawn" unique_id=1320712038]
-offset_left = -34.0
-offset_top = -60.0
-offset_right = 192.0
-offset_bottom = 173.0
-texture = ExtResource("9_wsu2k")
-expand_mode = 1
-
 [node name="MeatSpawn" parent="Spawners" unique_id=1467168443 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(507, 448)
+position = Vector2(502, 448)
 object = NodePath("../../IngredientSpawns/IngredientBurger")
 
 [node name="TextureRect" type="TextureRect" parent="Spawners/MeatSpawn" unique_id=257315226]
-offset_left = 22.0
-offset_top = -7.0
-offset_right = 138.0
-offset_bottom = 87.0
-texture = ExtResource("10_k12tt")
+offset_left = -68.0
+offset_top = -65.0
+offset_right = 211.0
+offset_bottom = 183.0
+texture = ExtResource("16_sh7q7")
 expand_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/MeatSpawn" unique_id=910189220]
-position = Vector2(80.5, 39.5)
+position = Vector2(71, 33)
 shape = SubResource("RectangleShape2D_yex4w")
 
 [node name="PickleSpawn" parent="Spawners" unique_id=1091526461 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(191, 561)
+position = Vector2(338, 20)
 object = NodePath("../../IngredientSpawns/IngredientPickle")
 
 [node name="TextureRect" type="TextureRect" parent="Spawners/PickleSpawn" unique_id=1597567093]
-offset_right = 274.0
-offset_bottom = 241.0
+offset_left = -7.0
+offset_top = -2.0
+offset_right = 267.0
+offset_bottom = 239.0
 texture = ExtResource("11_h1bgf")
 expand_mode = 1
 
@@ -326,37 +469,75 @@ position = Vector2(128.5, 74.5)
 shape = SubResource("RectangleShape2D_ashne")
 
 [node name="OnionSpawn" parent="Spawners" unique_id=1648120355 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(140, 524)
+position = Vector2(351, 190.99997)
 scale = Vector2(0.9200012, 0.88)
 object = NodePath("../../IngredientSpawns/IngredientOnion")
 
 [node name="TextureRect" type="TextureRect" parent="Spawners/OnionSpawn" unique_id=390084143]
-offset_left = -18.0
-offset_top = -53.0
-offset_right = 108.0
-offset_bottom = 62.0
-texture = ExtResource("15_h1bgf")
+offset_left = -129.34766
+offset_top = -129.54544
+offset_right = 229.95624
+offset_bottom = 150.72733
+texture = ExtResource("18_t8g3x")
 expand_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/OnionSpawn" unique_id=2060927140]
-position = Vector2(45.5, 4.5)
+position = Vector2(52.17385, 13.636368)
 shape = SubResource("RectangleShape2D_2t48w")
 
 [node name="TomatoSpawn" parent="Spawners" unique_id=694961211 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
-position = Vector2(159, 625)
+position = Vector2(485, 205)
 object = NodePath("../../IngredientSpawns/IngredientTomato")
 
 [node name="TextureRect" type="TextureRect" parent="Spawners/TomatoSpawn" unique_id=1275322278]
-offset_left = -78.0
-offset_top = -90.0
-offset_right = 139.0
-offset_bottom = 109.0
+offset_left = -84.0
+offset_top = -101.0
+offset_right = 133.0
+offset_bottom = 98.0
 texture = ExtResource("16_b3802")
 expand_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/TomatoSpawn" unique_id=424075190]
 position = Vector2(28.5, 9.5)
 shape = SubResource("RectangleShape2D_mkvl2")
+
+[node name="BunSpawn" parent="Spawners" unique_id=2049139094 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
+position = Vector2(-33.999996, 82)
+scale = Vector2(5.5, 5.5)
+object = NodePath("../../IngredientSpawns/IngredientBun")
+
+[node name="Bottom" type="TextureRect" parent="Spawners/BunSpawn" unique_id=1401032256]
+offset_right = 43.455
+offset_bottom = 40.545
+texture = ExtResource("20_t8g3x")
+expand_mode = 1
+
+[node name="Top" type="TextureRect" parent="Spawners/BunSpawn" unique_id=1440829848]
+offset_right = 43.45452
+offset_bottom = 40.54545
+texture = ExtResource("21_mh27c")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/BunSpawn" unique_id=1772921220]
+position = Vector2(21.999996, 13.454544)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_8xkks")
+
+[node name="FriesSpawn" parent="Spawners" unique_id=884905959 node_paths=PackedStringArray("object") instance=ExtResource("1_jjgbg")]
+position = Vector2(118.999985, 83)
+scale = Vector2(5.5, 5.5)
+object = NodePath("../../IngredientSpawns/IngredientFries")
+
+[node name="Bottom" type="TextureRect" parent="Spawners/FriesSpawn" unique_id=12919171]
+offset_top = -3.4545453
+offset_right = 43.455006
+offset_bottom = 37.090454
+texture = ExtResource("22_mh27c")
+expand_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/FriesSpawn" unique_id=1203991861]
+position = Vector2(22.000002, 14.363636)
+shape = SubResource("RectangleShape2D_hrlvh")
 
 [node name="Chef" type="AnimatedSprite2D" parent="." unique_id=240256092]
 position = Vector2(956, 248)
@@ -376,15 +557,14 @@ offset_bottom = 28.0
 timer = NodePath("../EndTimer")
 
 [node name="EndTimer" type="Timer" parent="." unique_id=297726321]
-wait_time = 60.0
+wait_time = 2.0
 one_shot = true
-autostart = true
 
 [node name="Ticket" type="TextureButton" parent="." unique_id=412334387]
-offset_left = 361.0
-offset_top = 22.0
-offset_right = 456.0
-offset_bottom = 138.0
+offset_left = 599.0
+offset_top = 29.0
+offset_right = 694.0
+offset_bottom = 145.0
 texture_normal = ExtResource("21_gqt35")
 ignore_texture_size = true
 stretch_mode = 0
@@ -397,5 +577,13 @@ offset_top = -115.0
 offset_right = 27.0
 offset_bottom = -115.0
 
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=192437517]
+
+[node name="Chatter" type="AudioStreamPlayer2D" parent="." unique_id=595432977]
+stream = ExtResource("31_6vit7")
+volume_db = -10.0
+bus = &"Music"
+
 [connection signal="pressed" from="CheckOrder" to="CheckOrder" method="_on_pressed"]
+[connection signal="timeout" from="EndTimer" to="." method="_on_end_timer_timeout"]
 [connection signal="pressed" from="Ticket" to="Ticket" method="_on_pressed"]

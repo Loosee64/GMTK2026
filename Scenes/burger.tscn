@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c7lq7r1d6g6o3" path="res://Scenes/object.tscn" id="1_ys118"]
 [ext_resource type="Script" uid="uid://bcwu11dnxevyf" path="res://Scripts/combine.gd" id="2_2pc64"]
 [ext_resource type="Texture2D" uid="uid://wtiupnovd537" path="res://Assets/Burger/BunBottom.png" id="3_6a7nn"]
+[ext_resource type="Texture2D" uid="uid://bd2g0sffnefo7" path="res://Assets/Burger/plate.tres" id="3_yh8lf"]
 [ext_resource type="Script" uid="uid://dwasnfa78cev7" path="res://Scripts/burgerinternal.gd" id="4_6a7nn"]
 [ext_resource type="Texture2D" uid="uid://w8i2kuui580e" path="res://Assets/Burger/LettuceCut.png" id="4_g4fio"]
 [ext_resource type="Texture2D" uid="uid://vs31rf6uwjwv" path="res://Assets/Burger/BunTop.png" id="5_w6wxl"]
@@ -10,95 +11,122 @@
 [ext_resource type="Texture2D" uid="uid://dtn4f484oamj3" path="res://Assets/Burger/TomatoCut.png" id="7_r7a5d"]
 [ext_resource type="Texture2D" uid="uid://dkbl3jitwwt1b" path="res://Assets/Burger/PickleCut.png" id="7_w6wxl"]
 [ext_resource type="Texture2D" uid="uid://ngekbb1ds7sp" path="res://Assets/Burger/OnionCut.png" id="8_teoj2"]
+[ext_resource type="Texture2D" uid="uid://d08av7g5vm7cw" path="res://Assets/Burger/Chips.png" id="12_drheb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+size = Vector2(246, 143)
 
 [node name="Object" unique_id=1751848827 instance=ExtResource("1_ys118")]
 combine_type = 1
 
-[node name="CollisionShape2D" parent="." index="0" unique_id=1715628032]
-position = Vector2(-6, -34)
-
-[node name="Node" type="Node2D" parent="." index="1" unique_id=695044495]
+[node name="Node" type="Node2D" parent="." index="0" unique_id=695044495]
 scale = Vector2(2, 2)
 script = ExtResource("2_2pc64")
 
-[node name="Bottom" type="TextureRect" parent="Node" index="0" unique_id=600788024]
-offset_left = -63.0
-offset_top = -55.0
-offset_right = 57.0
-offset_bottom = 48.0
+[node name="Plate" type="TextureRect" parent="Node" index="0" unique_id=1047430400]
+offset_left = -34.5
+offset_top = -20.0
+offset_right = 79.0
+offset_bottom = 20.5
+texture = ExtResource("3_yh8lf")
+expand_mode = 3
+script = ExtResource("4_6a7nn")
+
+[node name="Bottom" type="TextureRect" parent="Node" index="1" unique_id=600788024]
+visible = false
+offset_left = -55.0
+offset_top = -54.0
+offset_right = 65.0
+offset_bottom = 49.0
 texture = ExtResource("3_6a7nn")
 expand_mode = 1
 script = ExtResource("4_6a7nn")
-metadata/_edit_use_anchors_ = true
+type = 1
 
-[node name="Lettuce" type="TextureRect" parent="Node" index="1" unique_id=2051156899]
+[node name="Lettuce" type="TextureRect" parent="Node" index="2" unique_id=2051156899]
 visible = false
-offset_left = -63.0
-offset_top = -54.0
-offset_right = 57.0
-offset_bottom = 47.0
+offset_left = -55.0
+offset_top = -53.0
+offset_right = 65.0
+offset_bottom = 48.0
 texture = ExtResource("4_g4fio")
 expand_mode = 1
 script = ExtResource("4_6a7nn")
 type = 1
 
-[node name="Meat" type="TextureRect" parent="Node" index="2" unique_id=1558949565]
+[node name="Meat" type="TextureRect" parent="Node" index="3" unique_id=1558949565]
 visible = false
-offset_left = -63.0
-offset_top = -54.0
-offset_right = 57.0
-offset_bottom = 47.0
+offset_left = -55.0
+offset_top = -53.0
+offset_right = 65.0
+offset_bottom = 48.0
 texture = ExtResource("6_g4fio")
 expand_mode = 1
 script = ExtResource("4_6a7nn")
 type = 2
 
-[node name="Tomato" type="TextureRect" parent="Node" index="3" unique_id=1549681868]
+[node name="Tomato" type="TextureRect" parent="Node" index="4" unique_id=1549681868]
 visible = false
-offset_left = -63.0
-offset_top = -54.0
-offset_right = 57.0
-offset_bottom = 47.0
+offset_left = -55.0
+offset_top = -53.0
+offset_right = 65.0
+offset_bottom = 48.0
 texture = ExtResource("7_r7a5d")
 expand_mode = 1
 script = ExtResource("4_6a7nn")
 type = 2
 
-[node name="Onion" type="TextureRect" parent="Node" index="4" unique_id=199545506]
+[node name="Onion" type="TextureRect" parent="Node" index="5" unique_id=199545506]
 visible = false
-offset_left = -63.0
-offset_top = -54.0
-offset_right = 57.0
-offset_bottom = 47.0
+offset_left = -55.0
+offset_top = -53.0
+offset_right = 65.0
+offset_bottom = 48.0
 texture = ExtResource("8_teoj2")
 expand_mode = 1
 script = ExtResource("4_6a7nn")
 type = 2
 
-[node name="Pickle" type="TextureRect" parent="Node" index="5" unique_id=1653124713]
+[node name="Pickle" type="TextureRect" parent="Node" index="6" unique_id=1653124713]
 visible = false
-offset_left = -63.0
-offset_top = -54.0
-offset_right = 57.0
-offset_bottom = 47.0
+offset_left = -55.0
+offset_top = -53.0
+offset_right = 65.0
+offset_bottom = 48.0
 texture = ExtResource("7_w6wxl")
 expand_mode = 1
 script = ExtResource("4_6a7nn")
 type = 2
 
-[node name="Top" type="TextureRect" parent="Node" index="6" unique_id=514539648]
-offset_left = -63.0
-offset_top = -54.0
-offset_right = 57.0
-offset_bottom = 47.0
+[node name="Top" type="TextureRect" parent="Node" index="7" unique_id=514539648]
+visible = false
+offset_left = -55.0
+offset_top = -53.0
+offset_right = 65.0
+offset_bottom = 48.0
 texture = ExtResource("5_w6wxl")
 expand_mode = 1
 script = ExtResource("4_6a7nn")
-metadata/_edit_use_anchors_ = true
+type = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=1195421103]
+[node name="Fries" type="TextureRect" parent="Node" index="8" unique_id=1942474859]
+visible = false
+offset_left = -8.5
+offset_top = -54.0
+offset_right = 100.0
+offset_bottom = 38.0
+texture = ExtResource("12_drheb")
+expand_mode = 3
+script = ExtResource("4_6a7nn")
+type = 7
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1195421103]
 sprite_frames = SubResource("SpriteFrames_u0ya7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2" unique_id=894264790]
+position = Vector2(55, -19.5)
+shape = SubResource("RectangleShape2D_u0ya7")
 
 [connection signal="object_dropped" from="." to="Node" method="_on_object_object_dropped"]
